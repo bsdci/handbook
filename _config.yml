@@ -1,0 +1,10 @@
+chapters:
+  - getting-started
+  - basics
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "handbook"
