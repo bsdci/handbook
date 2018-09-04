@@ -1,5 +1,7 @@
-chapters:
+title: iocage Handbook
+email: authors@iocage.io
 
+chapters:
   -
     title: Getting Started
     path: getting-started
@@ -24,7 +26,12 @@ chapters:
 
 sass:
   style: compact
-  sass_dir: .
+  sass_dir: css
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 defaults:
   -

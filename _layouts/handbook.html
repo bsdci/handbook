@@ -1,19 +1,22 @@
-<html>
-  <head>
-    <title>iocage Handbook: {{page.title}}</title>
-    <link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | relative_url }}"/>
-  </head>
-  <body>
-    <h1>Chapter Index</h1>
-    <nav>
+---
+layout: iocage
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Chapter Index</h1>
       <ul>
         {% for chapter in site.chapters %}
         <li><a href="{{ chapter.path | relative_url }}">{{chapter.title}}</a></li>
         {% endfor %}
       </ul>
-    </nav>
-    <hr/>
-    <h1>{{page.title}}</h1>
-    <content>{{content}}</content>
-  </body>
-</html>
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{page.title}}</h1>
+      <content>{{content}}</content>
+    </div>
+  </div>
+</div>
