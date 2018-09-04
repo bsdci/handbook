@@ -1,14 +1,17 @@
 <html>
   <head>
     <title>iocage Handbook: {{page.title}}</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
   </head>
   <body>
     <h1>Chapter Index</h1>
-    <ul>
-      {% for chapter in site.chapters %}
-      <li>{{chapter}}</li>
-      {% endfor %}
-    </ul>
+    <nav>
+      <ul>
+        {% for chapter in site.chapters %}
+        <li>{{chapter}}</li>
+        {% endfor %}
+      </ul>
+    </nav>
     <hr/>
     <content>{{content}}</content>
   </body>

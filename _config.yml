@@ -2,6 +2,10 @@ chapters:
   - getting-started
   - basics
 
+sass:
+  style: compact
+  sass_dir: .
+
 defaults:
   -
     scope:
