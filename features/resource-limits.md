@@ -2,8 +2,8 @@ To limit jails or jail process resources the host needs to have the `kern.racct`
 
 ```sh
 [ `/sbin/sysctl -qn kern.racct.enable` -lt 1 ] && \
-	echo "kern.racct.enable=1" >> /boot/loader.conf && \
-	reboot
+    echo "kern.racct.enable=1" >> /boot/loader.conf && \
+    reboot
 ```
 
 Resource limits affecting the whole jail are compatible with other variants of iocage, but can also be set to constrain individual processes within the jail.
