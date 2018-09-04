@@ -8,7 +8,7 @@
     <nav>
       <ul>
         {% for chapter in site.chapters %}
-        <li><a href="/{{chapter}}">{{chapter}}</li>
+        <li><a href="{{ chapter | relative_url }}">{{chapter}}</a></li>
         {% endfor %}
       </ul>
     </nav>
