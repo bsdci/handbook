@@ -3,3 +3,10 @@
 
 @import "_iocage-website";
 @import "_rouge";
+
+@for $i from 1 through 6 {
+	h#{$i} > a {
+		text-decoration: none;
+		color: black;
+	}
+}
