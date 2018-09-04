@@ -1,8 +1,5 @@
 ---
-title: Index
+title: "Iocage Handbook"
 ---
-
-iocage Handbook
-===============
 
 This is the root page of the iocage Handbook.

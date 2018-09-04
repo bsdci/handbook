@@ -1,6 +1,26 @@
 chapters:
-  - getting-started
-  - basics
+
+  -
+    title: Getting Started
+    path: getting-started
+  -
+    title: About iocage
+    path: about
+  -
+    title: iocage Library Essentials
+    path: library-essentials
+  -
+    title: Command Line
+    path: cli
+  -
+    title: Features
+    path:  features
+  -
+    title: Migration
+    path:  migration
+  -
+    title: Advanced Library Usage
+    path: advanced
 
 sass:
   style: compact
