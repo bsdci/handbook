@@ -4,25 +4,25 @@ email: authors@iocage.io
 chapters:
   -
     title: Getting Started
-    path: getting-started
+    url: /getting-started/
   -
     title: About iocage
-    path: about
+    url: /about/
   -
     title: iocage Library Essentials
-    path: library-essentials
+    url: /library-essentials/
   -
     title: Command Line
-    path: cli
+    url: /cli/
   -
     title: Features
-    path:  features
+    url:  /features/
   -
     title: Migration
-    path:  migration
+    url:  /migration/
   -
     title: Advanced Library Usage
-    path: advanced
+    url: /advanced/
 
 sass:
   style: compact

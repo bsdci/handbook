@@ -1,18 +1,21 @@
 ---
 layout: iocage
 ---
-<div class="container-fluid">
+<nav class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <h1>Chapter Index</h1>
       <ul>
         {% for chapter in site.chapters %}
-        <li><a href="{{ chapter.path | relative_url }}">{{chapter.title}}</a></li>
+        <li>
+            <a href="{{ chapter.url | relative_url }}" class="{% if chapter.url == page.url %}active{% endif %}">{{chapter.title}}</a>
+        </li>
         {% endfor %}
       </ul>
-      <hr/>
     </div>
   </div>
+</nav>
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <h1>{{page.title}}</h1>

@@ -14,3 +14,11 @@
 pre.highlight {
 	overflow-x: scroll;
 }
+
+content {
+    nav {
+        a.active {
+            font-weight: bold;
+        }
+    }
+}
