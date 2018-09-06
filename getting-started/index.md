@@ -11,13 +11,13 @@ There are plans to make iocage work on [all systems supporting ZFS](milestone li
 
 As there is currently no package or port of iocage, to get started we'll first need to install `git`
 
-```sh
+```shell-session
 # pkg install git
 ```
 
 Let's also create `/usr/local/src` for the base of our operations:
 
-```sh
+```shell-session
 # mkdir -p /usr/local/src
 # cd /usr/local/src
 ```
@@ -26,20 +26,20 @@ Let's also create `/usr/local/src` for the base of our operations:
 
 Please clone the repository from: https://github.com/iocage/libiocage.git
 
-```sh
+```shell-session
 ~src # git clone https://github.com/iocage/libiocage.git
 ~src # cd libiocage
 ```
 
 We can now use the project's `Makefile` to install all necessary *system* dependencies:
 
-```sh
+```shell-session
 ~libiocage # make deps
 ```
 
 To install iocage, we will use the `install-dev` target, which installs additional dependencies for development, and allows us to use `/usr/local/src/libiocage` for playing with project in the Python REPL:
 
-```sh
+```shell-session
 ~libiocage # make install-dev
 ```
 
@@ -47,7 +47,7 @@ In addition to several [code and style checkers](link to code & style checkers) 
 
 Let's test our setup so far:
 
-```
+```shell-session
 ~libiocage # ioc list
 iocage is not activated yet - please run `ioc activate <POOL>` first and select a pool
 ```
@@ -60,15 +60,15 @@ However, we'll be using a more versatile method:
 
 We can set our first dataset for iocage's use with `sysrc(8)` or by editing `rc.conf(5)`:
 
-```sh
+```shell-session
 ~libiocage # sysrc ioc_dataset_default="zroot/iocage"
 ioc_dataset_default: zroot/iocage -> zroot/iocage
 ```
 
 and verify now that it really works with `ioc list`, which should return an empty table:
 
-```sh
-~libiocage # ioc list
+```shell-session
+# ioc list
 +-----|-----------|---------|---------|----------+
 | JID | FULL_NAME | RUNNING | RELEASE | IP4_ADDR |
 +=====+===========+=========+=========+==========+
