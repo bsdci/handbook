@@ -24,6 +24,8 @@ chapters:
     title: Advanced Library Usage
     url: /advanced/
 
+iocage_cli_tool: "ioc"
+
 sass:
   style: compact
   sass_dir: css
