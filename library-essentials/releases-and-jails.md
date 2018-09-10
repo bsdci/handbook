@@ -66,4 +66,5 @@ Unlike the filter above it is possible to select jails that either begin with `f
 {{site.iocage_cli_tool}} list "foo+,*bar*"
 ```
 
-Note: Depending on the shell it is required to quote filter terms containing the `*` glob character.
+Note: Depending on the shell it is required to quote or escape filter terms containing the `*` or `+` glob characters.
+Similarly the `,` character used in most shells for ordering commands, which need quoting or escaping.
