@@ -32,7 +32,7 @@ False
 True
 ```
 
-Releases that are newer than the host kernel are not officially supported because they might be suspect to breaking ABI changes.
+Releases that are newer than the host kernel are not officially supported because they might be subject to breaking ABI changes.
 
 ```python
 >>> host = iocage.Host()
@@ -47,7 +47,7 @@ To make a Release become available locally, it can be fetched from the remote se
 During this process the release asset `base.txz` will be fetched and extracted.
 When fetching an already existing release `freebsd-update`, respectively `hbsd-update` are used to apply the latest patches to the release.
 
-Note: The execution time of Release.fetch() depends on the connection speed and extraction performace.
+Note: The execution time of `Release.fetch()` depends on the connection speed and extraction performance.
 
 ```python
 >>> release = iocage.Release("10.1-RELEASE")
