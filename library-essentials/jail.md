@@ -1,15 +1,19 @@
-An iocage Jail is a data structure similar to a [Release](#release). In addition to its root dataset cloned from a Release the Jail structure at least contains the Jail Configuration and an fstab file that differentiate the Jail from its Release.
+An iocage Jail is a data structure similar to a [Release](#release).
+In addition to its root dataset cloned from a Release the Jail structure at least contains the Jail Configuration and an fstab file that differentiate the Jail from its Release.
 
   /iocage/jails/<JAIL_NAME>/
   /iocage/jails/<JAIL_NAME>/root
   /iocage/jails/<JAIL_NAME>/fstab
   /iocage/jails/<JAIL_NAME>/config.json
 
-In terms of FreeBSD a jail is defined in the kernel as prison structure that exists until the last inmate is dead. Usually this refers to the last process assigned to a jail, but iocage starts jails a jail with the `persist` option, so that we manually tear down a running jail. Each running jail on FreeBSD has a JID assigned that signals the running state.
+In terms of FreeBSD a jail is defined in the kernel as prison structure that exists until the last inmate is dead.
+Usually this refers to the last process assigned to a jail, but iocage starts jails a jail with the `persist` option, so that we manually tear down a running jail.
+Each running jail on FreeBSD has a JID assigned that signals the running state.
 
 #### Jail State
 
-Every Jail instance has a `Jail.state` propery that is an optional dictionary reflects the output of the [jls command](https://www.freebsd.org/cgi/man.cgi?query=jls). Virtual properties like `Jail.running` and `Jail.stopped` provide (read only) boolean values about the jail state.
+Every Jail instance has a `Jail.state` propery that is an optional dictionary reflects the output of the [jls command](https://www.freebsd.org/cgi/man.cgi?query=jls).
+Virtual properties like `Jail.running` and `Jail.stopped` provide (read only) boolean values about the jail state.
 
 ```python
 >>> jail = iocage.Jail("myjail")
@@ -32,7 +36,8 @@ Several operations on a Jail can only be applied when it has a specific state, s
 
 #### Jail Creation
 
-When creating a new Jail `new` argument disables the internal checks for existence of the jail data structure. Instead it is created in the next step from a fetched Release.
+When creating a new Jail `new` argument disables the internal checks for existence of the jail data structure.
+Instead it is created in the next step from a fetched Release.
 
 ```python
 release = iocage.Release("11.2-RELEASE")

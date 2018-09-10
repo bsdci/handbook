@@ -43,7 +43,9 @@ Releases that are newer than the host kernel are not officially supported becaus
 True
 ```
 
-To make a Release become available locally, it can be fetched from the remote servers. During this process the release asset `base.txz` will be fetched and extracted. When fetching an already existing release `freebsd-update`, respectively `hbsd-update` are used to apply the latest patches to the release.
+To make a Release become available locally, it can be fetched from the remote servers.
+During this process the release asset `base.txz` will be fetched and extracted.
+When fetching an already existing release `freebsd-update`, respectively `hbsd-update` are used to apply the latest patches to the release.
 
 Note: The execution time of Release.fetch() depends on the connection speed and extraction performace.
 
@@ -70,9 +72,11 @@ False
 True
 ```
  
-For comfort and security reasons release updating is divided in two stages. While updates are fetched by executing the updater utility to download a releases latest patches, they only make contact with a releases dataset during their application calling the `release.updater.apply()` method.
+For comfort and security reasons release updating is divided in two stages.
+While updates are fetched by executing the updater utility to download a releases latest patches, they only make contact with a releases dataset during their application calling the `release.updater.apply()` method.
 
-Note: Both methods `fetch()` and `apply()` return Python Generators, that covered later in this handbook. Casting a generator to a list is not the most effective way to interface with it, but is the simplest way to consume it visually.
+Note: Both methods `fetch()` and `apply()` return Python Generators, that covered later in this handbook.
+Casting a generator to a list is not the most effective way to interface with it, but is the simplest way to consume it visually.
 
 ```python
 >>> list(release.updater.fetch())
