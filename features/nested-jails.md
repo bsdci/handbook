@@ -1,4 +1,5 @@
-It is possible to use libiocage within another jail instance, so that it is possible to run nested jails. The requirements to run libiocage within another iocage jail are:
+It is possible to use libiocage within another jail instance, so that it is possible to run nested jails.
+The requirements to run libiocage within another iocage jail are
 
 - At least one ZFS dataset is shared with the jail that will become the iocage root dataset
 - An maximum number of allowed jails to start (`children_mac`)
