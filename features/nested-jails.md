@@ -5,11 +5,11 @@ The requirements to run libiocage within another iocage jail are
 - An maximum number of allowed jails to start (`children_mac`)
 - The ability to mount NullFS and ZFS
 
-```
-host # ioc create -b -n nested-host
+```shell-session
+host # {{site.iocage_cli_tool}} create -b -n nested-host
 host # zfs create -o jailed=on zroot/jailed
 host # ifconfig bridge1337 create inet 10.42.0.1/24 up
-host # ioc set \
+host # {{site.iocage_cli_tool}} set \
     jail_zfs=yes \
     jail_zfs_dataset=zroot/jailed \
     children_max=10 \
@@ -30,13 +30,13 @@ host # ioc set \
 
 Within the jail libiocage can be configured to use the shared ZFS filesystem:
 
-```
+```shell-session
 nested-host # pkg install -y git-lite
 nested-host # git clone https://github.com/iocage/libiocage
 nested-host # cd libiocage/
 nested-host # make install
-nested-host # sysrc ioc_dataset_ioc="root/jailed/iocage"
-nested-host # ioc fetch -r 11.1-RELEASE
-nested-host # ioc create -b -n nested-jail
+nested-host # sysrc {{site.iocage_cli_tool}}_dataset_ioc="root/jailed/iocage"
+nested-host # {{site.iocage_cli_tool}} fetch -r 11.1-RELEASE
+nested-host # {{site.iocage_cli_tool}} create -b -n nested-jail
 nested-host # ...
 ```

@@ -48,8 +48,8 @@ In addition to several [code and style checkers](link to code & style checkers) 
 Let's test our setup so far:
 
 ```shell-session
-~libiocage # {{ site.iocage_cli_tool }} list
-iocage is not activated yet - please run `{{ site.iocage_cli_tool }} activate <POOL>` first and select a pool
+~libiocage # {{site.iocage_cli_tool}} list
+iocage is not activated yet - please run `{{site.iocage_cli_tool}} activate <POOL>` first and select a pool
 ```
 
 As the error suggests, we'll have to configure iocage first before usage.
@@ -61,14 +61,14 @@ However, we'll be using a more versatile method:
 We can set our first dataset for iocage's use with `sysrc(8)` or by editing `rc.conf(5)`:
 
 ```shell-session
-~libiocage # sysrc {{ site.iocage_cli_tool }}_dataset_default="zroot/iocage"
-{{ site.iocage_cli_tool }}_dataset_default: zroot/iocage -> zroot/iocage
+~libiocage # sysrc {{site.iocage_cli_tool}}_dataset_default="zroot/iocage"
+{{site.iocage_cli_tool}}_dataset_default: zroot/iocage -> zroot/iocage
 ```
 
-and verify now that it really works with `{{ site.iocage_cli_tool }} list`, which should return an empty table:
+and verify now that it really works with `{{site.iocage_cli_tool}} list`, which should return an empty table:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} list
+# {{site.iocage_cli_tool}} list
 +-----|-----------|---------|---------|----------+
 | JID | FULL_NAME | RUNNING | RELEASE | IP4_ADDR |
 +=====+===========+=========+=========+==========+
@@ -78,10 +78,10 @@ and verify now that it really works with `{{ site.iocage_cli_tool }} list`, whic
 ## The First Jail
 
 To create our first Jail, we first have to download a [Release](../library-essentials/#release).
-We can fetch the host system's default release by pressing enter on the `{{ site.iocage_cli_tool }} fetch` prompt:
+We can fetch the host system's default release by pressing enter on the `{{site.iocage_cli_tool}} fetch` prompt:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} fetch
+# {{site.iocage_cli_tool}} fetch
 [0] 10.1-RELEASE (EOL)
 [1] 10.2-RELEASE (EOL)
 [2] 10.3-RELEASE (EOL)
@@ -98,7 +98,7 @@ Press [Enter] to fetch the default selection (11.2-RELEASE) [6]:
 We can verify that the release was downloaded successfully with
 
 ```shell-session
-# {{ site.iocage_cli_tool }} list --release
+# {{site.iocage_cli_tool}} list --release
 +--------------+
 |  FULL_NAME   |
 +==============+
@@ -109,9 +109,9 @@ We can verify that the release was downloaded successfully with
 Now, let's create our Jail and verify that everything works as expected:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} create hello-world
+# {{site.iocage_cli_tool}} create hello-world
 hello-world successfully created from 11.2-RELEASE!
-# {{ site.iocage_cli_tool }} list
+# {{site.iocage_cli_tool}} list
 +-----|-------------|---------|--------------|----------+
 | JID |  FULL_NAME  | RUNNING |   RELEASE    | IP4_ADDR |
 +=====+=============+=========+==============+==========+
@@ -122,13 +122,13 @@ hello-world successfully created from 11.2-RELEASE!
 And we're ready to start:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} start hello-world
+# {{site.iocage_cli_tool}} start hello-world
 [+] JailResolverConfig: OK [0.003s]
 [+] JailLaunch@hello-world: OK [0.496s]
 hello-world running as JID 3
 ```
 
-Again, with `{{ site.iocage_cli_tool }} list` we can see what's up:
+Again, with `{{site.iocage_cli_tool}} list` we can see what's up:
 
 ```shell-session
 +-----|-------------|---------|--------------|----------+
@@ -147,10 +147,10 @@ root 3800  0.0  0.1 6412 2376  -  IsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  IsJ  20:53   0:00.01 /usr/sbin/cron -s
 ```
 
-Now, if you compare this to the output of `ps` under `{{ site.iocage_cli_tool }} exec`, it should look similar:
+Now, if you compare this to the output of `ps` under `{{site.iocage_cli_tool}} exec`, it should look similar:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} exec hello-world -- ps -aux
+# {{site.iocage_cli_tool}} exec hello-world -- ps -aux
 USER  PID %CPU %MEM  VSZ  RSS TT  STAT STARTED    TIME COMMAND
 root 3800  0.0  0.1 6412 2376  -  IsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  IsJ  20:53   0:00.01 /usr/sbin/cron -s
@@ -161,7 +161,7 @@ except now `ps(1)` also lists itself.
 The hello-world Jail believes to be alone in the world, in fact, it believes to be Jail 0:
 
 ```shell-session
-# {{ site.iocage_cli_tool }} exec hello-world -- ps -aux -J 0
+# {{site.iocage_cli_tool}} exec hello-world -- ps -aux -J 0
 USER  PID %CPU %MEM  VSZ  RSS TT  STAT STARTED    TIME COMMAND
 root 3800  0.0  0.1 6412 2376  -  SsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  SsJ  20:53   0:00.01 /usr/sbin/cron -s
