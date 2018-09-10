@@ -36,7 +36,7 @@ nested-host # git clone https://github.com/iocage/libiocage
 nested-host # cd libiocage/
 nested-host # make install
 nested-host # sysrc {{site.iocage_cli_tool}}_dataset_ioc="root/jailed/iocage"
-nested-host # {{site.iocage_cli_tool}} fetch -r 11.1-RELEASE
+nested-host # {{site.iocage_cli_tool}} fetch -r {{site.current_fbsd_release}}
 nested-host # {{site.iocage_cli_tool}} create -b -n nested-jail
 nested-host # ...
 ```

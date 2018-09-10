@@ -42,7 +42,7 @@ When creating a new Jail `new` argument disables the internal checks for existen
 Instead it is created in the next step from a fetched Release.
 
 ```python
-release = iocage.Release("11.2-RELEASE")
+release = iocage.Release("{{site.current_fbsd_release}}")
 jail = iocage.Jail(data(id="myjail"), new=True)
 jail.create(release)
 ```

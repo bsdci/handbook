@@ -87,12 +87,10 @@ We can fetch the host system's default release by pressing enter on the `{{site.
 [2] 10.3-RELEASE (EOL)
 [3] 10.4-RELEASE
 [4] 11.0-RELEASE (EOL)
-[5] 11.1-RELEASE
-[6] 11.2-RELEASE
-[7] 9.3-RELEASE (EOL)
+...etc...
 
 Type the number of the desired RELEASE
-Press [Enter] to fetch the default selection (11.2-RELEASE) [6]:
+Press [Enter] to fetch the default selection ({{site.current_fbsd_release}}) [6]:
 ```
 
 We can verify that the release was downloaded successfully with
@@ -102,7 +100,7 @@ We can verify that the release was downloaded successfully with
 +--------------+
 |  FULL_NAME   |
 +==============+
-| 11.2-RELEASE |
+| {{site.current_fbsd_release}} |
 +--------------+
 ```
 
@@ -110,12 +108,12 @@ Now, let's create our Jail and verify that everything works as expected:
 
 ```shell-session
 # {{site.iocage_cli_tool}} create hello-world
-hello-world successfully created from 11.2-RELEASE!
+hello-world successfully created from {{site.current_fbsd_release}}!
 # {{site.iocage_cli_tool}} list
 +-----|-------------|---------|--------------|----------+
 | JID |  FULL_NAME  | RUNNING |   RELEASE    | IP4_ADDR |
 +=====+=============+=========+==============+==========+
-| -   | hello-world | no      | 11.2-RELEASE |          |
+| -   | hello-world | no      | {{site.current_fbsd_release}} |          |
 +-----|-------------|---------|--------------|----------+
 ```
 
@@ -134,7 +132,7 @@ Again, with `{{site.iocage_cli_tool}} list` we can see what's up:
 +-----|-------------|---------|--------------|----------+
 | JID |  FULL_NAME  | RUNNING |   RELEASE    | IP4_ADDR |
 +=====+=============+=========+==============+==========+
-| 3   | hello-world | yes     | 11.2-RELEASE |          |
+| 3   | hello-world | yes     | {{site.current_fbsd_release}} |          |
 +-----|-------------|---------|--------------|----------+
 ```
 
