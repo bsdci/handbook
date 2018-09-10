@@ -8,8 +8,8 @@ In addition to its root dataset cloned from a Release the Jail structure at leas
 /iocage/jails/<JAIL_NAME>/config.json
 ```
 
-In terms of FreeBSD a jail is defined in the kernel as prison structure that exists until the last inmate is dead.
-Usually this refers to the last process assigned to a jail, but iocage starts jails a jail with the `persist` option, so that we manually tear down a running jail.
+In terms of FreeBSD a jail is defined in the kernel as "prison structure that exists until the last inmate is dead."
+Usually this refers to the last process assigned to a jail, but iocage starts jails with the `persist` option, so that we manually tear down a running jail.
 Each running jail on FreeBSD has a JID assigned that signals the running state.
 
 #### Jail State
@@ -38,7 +38,7 @@ Several operations on a Jail can only be applied when it has a specific state, s
 
 #### Jail Creation
 
-When creating a new Jail `new` argument disables the internal checks for existence of the jail data structure.
+When creating a Jail the `new` argument disables the internal checks for existence of the jail data structure.
 Instead it is created in the next step from a fetched Release.
 
 ```python
