@@ -9,3 +9,75 @@ The JailConfig is compatible with all prior iocage variants, so that it is possi
 
 Note: Sceptical users may use libiocage with existing jails without modification of the format. A later migration will upgrade the whole jail to the most recent format, but besides the absence of some newer features there is no reason to migrate a jail at all.
 
+### Configuration Properties
+
+| Property              | Default                       | Description   |
+|-----------------------|-------------------------------|---------------|
+| id                    | None                          | TODO          |
+| release               | None                          | TODO          |
+| boot                  | False                         | TODO          |
+| priority              | 0                             | TODO          |
+| legacy                | False                         | TODO          |
+| priority              | 0                             | TODO          |
+| basejail              | False                         | TODO          |
+| basejail_type         | "nullfs"                      | TODO          |
+| clonejail             | False                         | TODO          |
+| defaultrouter         | None                          | TODO          |
+| defaultrouter6        | None                          | TODO          |
+| mac_prefix            | "02ff60"                      | TODO          |
+| vnet                  | False                         | TODO          |
+| interfaces            | []                            | TODO          |
+| vnet_interfaces       | []                            | TODO          |
+| ip4                   | "new"                         | TODO          |
+| ip4_saddrsel          | 1                             | TODO          |
+| ip4_addr              | None                          | TODO          |
+| ip6                   | "new"                         | TODO          |
+| ip6_saddrsel          | 1                             | TODO          |
+| ip6_addr              | None                          | TODO          |
+| resolver              | "/etc/resolv.conf"            | TODO          |
+| host_hostuuid         | None                          | TODO          |
+| host_hostname         | None                          | TODO          |
+| host_domainname       | None                          | TODO          |
+| devfs_ruleset         | 4                             | TODO          |
+| enforce_statfs        | 2                             | TODO          |
+| children_max          | 0                             | TODO          |
+| allow_set_hostname    | 1                             | TODO          |
+| allow_sysvipc         | 0                             | TODO          |
+| allow_raw_sockets     | 0                             | TODO          |
+| allow_chflags         | 0                             | TODO          |
+| allow_mount           | 0                             | TODO          |
+| allow_mount_devfs     | 0                             | TODO          |
+| allow_mount_nullfs    | 0                             | TODO          |
+| allow_mount_procfs    | 0                             | TODO          |
+| allow_mount_fdescfs   | 0                             | TODO          |
+| allow_mount_zfs       | 0                             | TODO          |
+| allow_mount_tmpfs     | 0                             | TODO          |
+| allow_quotas          | 0                             | TODO          |
+| allow_socket_af       | 0                             | TODO          |
+| rlimits               | None                          | TODO          |
+| sysvmsg               | "new"                         | TODO          |
+| sysvsem               | "new"                         | TODO          |
+| sysvshm               | "new"                         | TODO          |
+| exec_clean            | 1                             | TODO          |
+| exec_fib              | 1                             | TODO          |
+| exec_prestart         | None                          | TODO          |
+| exec_created          | None                          | TODO          |
+| exec_start            | "/bin/sh /etc/rc"             | TODO          |
+| exec_poststart        | None                          | TODO          |
+| exec_prestop          | None                          | TODO          |
+| exec_stop             | "/bin/sh /etc/rc.shutdown"    | TODO          |
+| exec_poststop         | None                          | TODO          |
+| exec_jail_user        | "root"                        | TODO          |
+| exec_timeout          | "60"                          | TODO          |
+| stop_timeout          | "30"                          | TODO          |
+| mount_procfs          | "0"                           | TODO          |
+| mount_devfs           | "1"                           | TODO          |
+| mount_fdescfs         | "0"                           | TODO          |
+| securelevel           | "2"                           | TODO          |
+| tags                  | []                            | TODO          |
+| template              | False                         | TODO          |
+| jail_zfs              | False                         | TODO          |
+| jail_zfs_dataset      | None                          | TODO          |
+| provisioning.method   | None                          | TODO          |
+| provisioning.source   | None                          | TODO          |
+| provisioning.rev      | "master"                      | TODO          |
