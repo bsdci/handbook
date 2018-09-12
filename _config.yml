@@ -25,6 +25,7 @@ chapters:
     url: /advanced/
 
 iocage_cli_tool: "ioc"
+current_fbsd_release: "11.2-RELEASE"
 
 sass:
   style: compact

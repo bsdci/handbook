@@ -23,11 +23,11 @@ As input format the iocage legacy syntax may be used. The preferred format for r
 A jails memory consumption can be limited to not exceed 128M by setting the `vmemoryuse` configuration property:
 
 ```sh
-ioc create -b -n limited-jail vmemoryuse=deny=128M/jail
+{{site.iocage_cli_tool}} create -b -n limited-jail vmemoryuse=deny=128M/jail
 ```
 
-The same resource limit can be set at any later time by using the `ioc set` command:
+The same resource limit can be set at any later time by using the `{{site.iocage_cli_tool}} set` command:
 
 ```sh
-ioc set vmemoryuse=128M limited-jail
+{{site.iocage_cli_tool}} set vmemoryuse=128M limited-jail
 ```
