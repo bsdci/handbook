@@ -11,7 +11,7 @@ An iocage Logger has a `print_level` attribute that defines the minimal loglevel
 The value defaults to `warn`, but can be changed on a global level.
 
 ```
-{{site.iocage_cli_tool}}} -d <PRINT_LEVEL> <COMMAND>
+{{site.iocage_cli_tool}} -d <PRINT_LEVEL> <COMMAND>
 ```
 
 The print_level `spam` is very verbose but great for debugging.
@@ -23,7 +23,6 @@ Cases that require manual handling of log entries (for example logging to files 
 
 ```python
 class MyLogger(iocage.Logger.Logger):
-
 
 	def __init__(self, *args, **kwargs) -> None:
 		log_file = "/var/log/iocage.log"
