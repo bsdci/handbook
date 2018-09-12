@@ -1,8 +1,10 @@
-IocageEvent is a core structure used all across iocage. Whenever iocage faces async tasks, it communicates by yielding IocageEvent instances.
+IocageEvent is a core structure used all across iocage.
+Whenever iocage faces async tasks, it communicates by yielding IocageEvent instances.
 
 The Python 3 language feature Generators (Iterators) allows to communicate state during the runtime of a method, so that every task gives agile feedback on its progress.
 
-Because Python Generators block until the yielded variable was consumed, some classes (for example `Jail`) provide a user-friendly abstraction of the internal Generator-class. The folliing two snippets will have the same effect of starting a Jail:
+Because Python Generators block until the yielded variable was consumed, some classes (for example `Jail`) provide a user-friendly abstraction of the internal Generator-class.
+The folliing two snippets will have the same effect of starting a Jail:
 
 ```python
 iocage.Jail("myjail").start()
@@ -16,7 +18,9 @@ for event in jail.start():
 
 ### IocageEvent State
 
-Generator methods yield each event twice - once when the event begins and another time when it was finished. While the `pending` attribute on each event reflects whether it is currently in progress. Events with the `done` attribute set to `True` are no longer pending, but may be exited with an `error` or have been `skipped`.
+Generator methods yield each event twice - once when the event begins and another time when it was finished.
+While the `pending` attribute on each event reflects whether it is currently in progress.
+Events with the `done` attribute set to `True` are no longer pending, but may be exited with an `error` or have been `skipped`.
 
 | IocageEvent Attribute | Description                                            |
 |-----------------------|--------------------------------------------------------|
@@ -27,7 +31,8 @@ Generator methods yield each event twice - once when the event begins and anothe
 
 ### Event Stacking
 
-It is possible that an event is still pending while other events are handled. When another event is started while another event is not finished yet, it becomes a nested child event.
+It is possible that an event is still pending while other events are handled.
+When another event is started while another event is not finished yet, it becomes a nested child event.
 
 From an event consumers perspective a typical stack of events provided by a generator looks like
 
@@ -38,7 +43,8 @@ From an event consumers perspective a typical stack of events provided by a gene
 	- Event C: end
 - Event A: end
 
-The start command of a jail is a good example to demonstrate the consumption of events. This time the `iocage.Jail.JailGenerator` class is used directly instead of the syncronous wrapper `iocage.Jail.Jail`.
+The start command of a jail is a good example to demonstrate the consumption of events.
+This time the `iocage.Jail.JailGenerator` class is used directly instead of the syncronous wrapper `iocage.Jail.Jail`.
 
 ```python
 jail = iocage.Jail.JailGenerator("myjail")
@@ -58,7 +64,9 @@ for event in jail.start():
 
 ### Rollback Steps on failed events
 
-When processing stacked tasks it is important to never leave the system in a intermediate state. Whenever an event can cause such persistent changes, a rollback method is attached to the event. This method is called in case of failure of a sibling or child event (in LIFO order), so that changes can be reverted.
+When processing stacked tasks it is important to never leave the system in a intermediate state.
+Whenever an event can cause such persistent changes, a rollback method is attached to the event.
+This method is called in case of failure of a sibling or child event (in LIFO order), so that changes can be reverted.
 
 This abstract example shows how such a rollback step is implemented by rolling back a ZFS snapshot after a failed event:
 
