@@ -13,24 +13,22 @@ Note: Sceptical users may use libiocage with existing jails without modification
 
 | Property              | Default                       | Description   |
 |-----------------------|-------------------------------|---------------|
-| id                    | None                          | TODO          |
-| release               | None                          | TODO          |
-| boot                  | False                         | TODO          |
-| priority              | 0                             | TODO          |
-| legacy                | False                         | TODO          |
-| priority              | 0                             | TODO          |
-| basejail              | False                         | TODO          |
-| basejail_type         | "nullfs"                      | TODO          |
+| id                    | None                          | Unique jail identifier. (In older versions of iocage this was a random UUID.) |
+| release               | None                          | Name of a jails release that may include a specific patchlevel, e.g. 11.1-RELEASE-p1 on FreeBSD |
+| boot                  | False                         | Starts the jail from the iocage rc.d script during host start.          |
+| priority              | 0                             | Defines the boot order. Higher numbers are started first.          |
+| legacy                | False                         | Read-only value defining whether a Jail is formatted with a legacy format (UCL or ZFS Properties) |
+| basejail              | False                         | True if a Jail is a Basejail.          |
+| basejail_type         | "nullfs"                      | Defined whether to use NullFS mounts or ZFS clones on Jail start. (Accepted Values: `nullfs` or `zfs`) |
 | clonejail             | False                         | TODO          |
-| defaultrouter         | None                          | TODO          |
-| defaultrouter6        | None                          | TODO          |
-| mac_prefix            | "02ff60"                      | TODO          |
-| vnet                  | False                         | TODO          |
-| interfaces            | []                            | TODO          |
-| vnet_interfaces       | []                            | TODO          |
+| defaultrouter         | None                          | IPv4 address of the default router. May include a specific interface name to establish a point-to-point route. (e.g. `<IPv4Address>[@<Interface>]`) |
+| defaultrouter6        | None                          | IPv6 address of the default router. May include a specific interface name to establish a point-to-point route. (e.g. `<IPv6Address>[@<Interface>]`) |
+| mac_prefix            | "02ff60"                      | Automatically generated MAC addresses for VNET interfaces use this prefix. |
+| vnet                  | False                         | Enables VNET/VIMAGE networking. |
+| interfaces            | []                            | Defines the relation between jail VNET and host interfaces. A double colon between the jail interface and the host bridge enables the Secure VNET. |
 | ip4                   | "new"                         | TODO          |
 | ip4_saddrsel          | 1                             | TODO          |
-| ip4_addr              | None                          | TODO          |
+| ip4_addr              | None                          | A boolean option to change the formerly mentioned behaviour and disable IPv4 source address selection for the jail in favour of the primary IPv4 address of the jail. Source address selection is enabled by default for all jails and the ip4.nosaddrsel set- ting of a parent jail is not inherited for any child jails. |
 | ip6                   | "new"                         | TODO          |
 | ip6_saddrsel          | 1                             | TODO          |
 | ip6_addr              | None                          | TODO          |
@@ -81,3 +79,8 @@ Note: Sceptical users may use libiocage with existing jails without modification
 | provisioning.method   | None                          | TODO          |
 | provisioning.source   | None                          | TODO          |
 | provisioning.rev      | "master"                      | TODO          |
+
+
+Removal:
+- vnet_interfaces
+- 
