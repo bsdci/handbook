@@ -26,6 +26,6 @@ A bug report should contain at least the following information:
 
 ### Security and Incident Response
 
-The iocage project highly values its users security which is why we emphasize our contributors to file vulnerability issues on a non-public channel until a reasonable precautions have been taken. Pull-Request that introduce mitigations against flaws, that can have a security impact, will contain details on the vulnerability and credit the person who has reported the issue in first place.
+The iocage project highly values its users security which is why we encourage our contributors to file vulnerability issues on a non-public channel until a reasonable precautions have been taken. Pull-Request that introduce mitigations against flaws, that can have a security impact, will contain details on the vulnerability and credit the person who has reported the issue in first place.
 
 User can stay informed by monitoring [GitHub Issues and Pull-Requests tagged with security label](https://github.com/iocage/libiocage/issues?q=label%3Asecurity).
