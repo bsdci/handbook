@@ -13,7 +13,7 @@ iocage.Jail("myjail").start()
 ```python
 jail = iocage.Jail.JailGenerator("myjail")
 for event in jail.start():
-	continue
+    continue
 ```
 
 ### IocageEvent State

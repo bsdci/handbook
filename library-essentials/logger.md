@@ -20,23 +20,22 @@ The print_level `spam` is very verbose but great for debugging.
 
 Cases that require manual handling of log entries (for example logging to files or remote services) invite for extension of the Logger class.
 
-
 ```python
 class MyLogger(iocage.Logger.Logger):
 
-	def __init__(self, *args, **kwargs) -> None:
-		log_file = "/var/log/iocage.log"
-		self._log_file_handle = open(log_file)
-		super().__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs) -> None:
+       log_file = "/var/log/iocage.log"
+       self._log_file_handle = open(log_file)
+       super().__init__(*args, **kwargs)
 
-	def _print(self, message: str, level: str, indent: int=0) -> None:
+    def _print(self, message: str, level: str, indent: int=0) -> None:
         self._log_file_handle.write(f"{message}\n")
 
     def __del__(self) -> None:
-    	self._log_file_handle.close()
+        self._log_file_handle.close()
 
 jail = iocage.Jail(
-	"myjail",
-	logger=MyLogger()
+    "myjail",
+    logger=MyLogger()
 )
 ```

@@ -12,7 +12,7 @@ The same can be achieved with the Python module
 ```python
 jails = iocage.Jails("myproject-+")
 for jail in jails:
-	print(jail.name)
+    print(jail.name)
 ```
 
 ### Filter Terms

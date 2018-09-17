@@ -71,7 +71,7 @@ False
 >>> release.fetched
 True
 ```
- 
+
 For comfort and security reasons release updating is divided in two stages.
 While updates are fetched by executing the updater utility to download a releases latest patches, they only make contact with a releases dataset during their application calling the `release.updater.apply()` method.
 
