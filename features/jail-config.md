@@ -84,7 +84,3 @@ A later migration will upgrade the whole jail to the most recent format, but bes
 | `provisioning.source`   | `None`                          | TODO          |
 | `provisioning.rev`      | `"master"`                      | TODO          |
 
-Removal:
-
-- vnet_interfaces
-- ...
