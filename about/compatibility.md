@@ -23,7 +23,8 @@ New Jails will be created in the most recent format found on a host, so that it 
 
 ### Migration between config formats
 
-The current config format of a Jail is stored in the Jail.config_format property. It can be either `json`, `ucl`, `zfs` or `auto` when it was not yet detected. The next time a Jail config is saved, the selected format will be used.
+The current config format of a Jail is stored in the Jail.config_format property. It can be either `json`, `ucl`, `zfs` or `auto` when it was not yet detected.
+The next time a Jail config is saved, the selected format will be used.
 
 This snippet demonstrates the migration from JSON to ZFS properties:
 
@@ -36,7 +37,8 @@ This snippet demonstrates the migration from JSON to ZFS properties:
 >>> jail.save()
 ```
 
-The above operation does not delete the prior configuration (JSON), so that the Jail config will still be read from its JSON config - deleting the prior configuration resolves this issue. Of course the `{{site.iocage_cli_tool}} migrate` takes care by cleaning up after a successful migration to the most recent format.
+The above operation does not delete the prior configuration (JSON), so that the Jail config will still be read from its JSON config - deleting the prior configuration resolves this issue.
+Of course the `{{site.iocage_cli_tool}} migrate` takes care by cleaning up after a successful migration to the most recent format.
 
 ### What about features?
 
