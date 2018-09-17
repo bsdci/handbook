@@ -10,7 +10,7 @@ Due to this default the {{site.iocage_cli_tool}}} commands can simply `exit(1)` 
 An iocage Logger has a `print_level` attribute that defines the minimal loglevel of a message to be printed.
 The value defaults to `warn`, but can be changed on a global level.
 
-```
+```sh
 {{site.iocage_cli_tool}} -d <PRINT_LEVEL> <COMMAND>
 ```
 

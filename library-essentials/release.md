@@ -9,6 +9,7 @@ Releases are provided by the OS distribution maintainers and can be listed from 
 >>> distribution = iocage.Distribution()
 >>> [x.name for x in distribution.releases]
 [
+    '9.3-RELEASE'
     '10.1-RELEASE',
     '10.2-RELEASE',
     '10.3-RELEASE',
@@ -16,7 +17,6 @@ Releases are provided by the OS distribution maintainers and can be listed from 
     '11.0-RELEASE',
     '11.1-RELEASE',
     '11.2-RELEASE',
-    '9.3-RELEASE'
 ]
 ```
 
