@@ -10,5 +10,5 @@ title: "About iocage"
 {% include_relative bug-reporting.md %}
 ## [Compatibility](#compatibility)
 {% include_relative compatibility.md %}
-## [Code of Conduct](#code-of-conduct)
+## [Contributor Covenant Code of Conduct](#code-of-conduct)
 {% include_relative code-of-conduct.md %}
