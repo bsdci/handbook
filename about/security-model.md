@@ -13,7 +13,6 @@ The update process of releases is splitted in two stages. The first stage execut
 In the second stage libiocage creates a temporary jail that mount the fetched updates read-only, so that updates can be applied onto a minimal jail without network or any privileged permissions.
 The latter allows updating non-basejails without introducing risk to the host system.
 
-
 #### Paths
 
 Whenever libioage needs to access paths within a jail (for instance to create fstab mountpoints), the absolute paths are verified to be ancestors of the jails root dataset.
@@ -22,6 +21,6 @@ Because the check occurs before executing such operations jails must not run for
 
 #### External Commands
 
-Not every internal features of libiocage uses Python modules that bind to system commands, but often execute external commands using Popen.
-The input such commands are executed with is quoted using shlex to mitigate risk of command injection from user provided data.
+Not every internal features of libiocage uses Python modules that bind to system commands, but often execute external commands using [Popen](https://docs.python.org/3/library/subprocess.html#popen-constructor).
+The input such commands are executed with is quoted using [shlex](https://docs.python.org/3/library/shlex.html) to mitigate risk of command injection from user provided data.
 Properly escaped arguments are especially important when libiocage is used when external parties may alter a jails configuration (for example in shared-hosting scenarios).
