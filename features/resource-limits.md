@@ -12,7 +12,8 @@ Resource limits affecting the whole jail are compatible with other variants of i
 
 Resource limits can be configured according to the `rctl` man page.
 
-As input format the iocage legacy syntax may be used. The preferred format for resource limit properties is:
+As input format the iocage legacy syntax may be used.
+The preferred format for resource limit properties is:
 
 ```
 [<action>=]<amount>[/<per>]
