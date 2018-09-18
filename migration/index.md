@@ -4,17 +4,16 @@ title: "Migration"
 
 Switching to the latest Jail Config format has performance benefits and enables features that have been introduced in libiocage.
 
-As usual, libiocage treats operations that modify existing jails with caution. As precaution a snapshot is automatically created before migrating a jail, so that jails are never left in a defect state.
+As usual, libiocage treats operations that modify existing jails with caution.
+As precaution a snapshot is automatically created before migrating a jail, so that jails are never left in a defect state.
 
 Note: Jails that have been migrated might no longer been seen by iocage_legacy.
-
 
 ### Migration with the CLI tool
 
 ```sh
 {{site.iocage_cli_tool}} migrate my-jail
 ```
-
 
 ### Migration with the Python Module
 
