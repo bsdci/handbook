@@ -29,5 +29,8 @@ title: "Features"
 ## [Packages](#packages)
 {% include_relative packages.md %}
 
+## [Hook Environment Variables](#environment)
+{% include_relative environment.md %}
+
 ## [Provisioning](#provisioning)
 {% include_relative provisioning.md %}
