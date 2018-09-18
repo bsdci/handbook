@@ -17,9 +17,6 @@ title: "Features"
 ## [Nested Jails](#nested-jails)
 {% include_relative nested-jails.md %}
 
-## [Data](#data)
-{% include_relative data.md %}
-
 ## [Shared ZFS datasets](#shared-zfs-datasets)
 {% include_relative shared-zfs-datasets.md %}
 
