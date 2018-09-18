@@ -25,13 +25,14 @@ The glob characters `+` and `*` match any string - also matches to an empty stri
 Note: The default shell requires escaping the `*` character, which is why this handbook always puts them in quotes.
 
 Only Jails with a name that starts with `my-project` are listed:
-```
+
+```sh
 {{site.iocage_cli_tool}} list "my-project+"
 ```
 
 #### Filtering by Jail-Config properties
 
-Not only Jail names can be matched, but also all their properties, which enables users to 
+Not only Jail names can be matched, but also all their properties, which enables users to
 
 ```sh
 {{site.iocage_cli_tool}} list vnet=on
@@ -59,7 +60,8 @@ The above example prints all jails that are tagged with `customer-a` or do not h
 
 #### Filters in the Python Module
 
-The iocage Python module accepts Filters as selector of Resources like Jails and Releases. They can be passed to the `JailsGenerator` or `ReleasesGenerator` (plural) classes as Python set structure.
+The iocage Python module accepts Filters as selector of Resources like Jails and Releases.
+They can be passed to the [`JailsGenerator`](https://iocage.github.io/libiocage/iocage.Jails.html#iocage.Jails.JailsGenerator) or [`ReleasesGenerator`](https://iocage.github.io/libiocage/iocage.Releases.html#iocage.Releases.ReleasesGenerator) (plural) classes as Python set structure.
 
 ```python
 >>> import iocage
