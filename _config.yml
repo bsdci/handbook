@@ -35,6 +35,9 @@ chapters:
       -
         title: Contributor Covenant Code of Conduct
         url: about/code-of-conduct
+      -
+        title: Migration
+        url:  about/migration
   -
     title: iocage Library Essentials
     chapters:
@@ -92,9 +95,6 @@ chapters:
       -
         title: Provisioning
         url: features/provisioning
-  -
-    title: Migration
-    url:  /migration/
   # -
   #   title: Advanced Library Usage
   #   chapters:
