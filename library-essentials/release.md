@@ -1,3 +1,6 @@
+---
+title: Release
+---
 FreeBSD jails allow to isolate software while sharing kernel resources across the system.
 iocage runs the entire userland of a distribution release that it has downloaded from a FreeBSD or HardenedBSD release server.
 In the world of iocage every release is represented as a zfs dataset stored in `<ZPOOL>/iocage/releases/<RELEASE_NAME>` that be cloned into a [Jail](#jail) later on.

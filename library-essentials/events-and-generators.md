@@ -1,3 +1,6 @@
+---
+title: Events and Generators
+---
 IocageEvent is a core structure used all across iocage.
 Whenever iocage faces async tasks, it communicates by yielding IocageEvent instances.
 

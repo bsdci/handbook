@@ -1,3 +1,6 @@
+---
+title: Provisioning
+---
 FreeNAS is also using iocage to provide their users a graphical user interface for FreeBSD jails.
 ixSystems maintains several so called plugins (called ix-iocage-plugins in libiocage).
 The provisioning feature of libiocage already has support for those plugins.

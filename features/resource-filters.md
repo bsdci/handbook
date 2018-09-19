@@ -1,3 +1,6 @@
+---
+title: Resource Filters
+---
 Filter selection of bunches of jails makes it easy to target a bunch of jails.
 A filter consists of one or many filter terms that will be matched against any jails.
 Jails passing all filter terms will then be suspect of further operations.

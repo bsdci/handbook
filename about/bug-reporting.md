@@ -1,3 +1,6 @@
+---
+title: Bug Reporting
+---
 Issues and Bugs of iocage are tracked on GitHub among the source repositories. 
 A direct relation between sources and bug resolution allows us to comprehensively inform about reaons behind changes, which is important to prevent future regressions.
 

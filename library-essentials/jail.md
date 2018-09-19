@@ -1,3 +1,6 @@
+---
+title: Jail
+---
 An iocage Jail is a data structure similar to a [Release](#release).
 In addition to its root dataset cloned from a Release the Jail structure at least contains the Jail Configuration and an fstab file that differentiate the Jail from its Release.
 

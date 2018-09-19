@@ -1,3 +1,6 @@
+---
+title: Security Model
+---
 libiocage provides secure compartments using the FreeBSD jail feature.
 Therefore the project follows an uncompromising approach of protecting the host system from any third party content downloaded or coming from within a jail.
 

@@ -1,3 +1,6 @@
+---
+title: Errors
+---
 There are two kinds of errors in iocage - well-known errors that inherit from `iocage.errors.IocageException` that will not print a stack trace, but log reasonable hints and error messages, and other errors that were caused by defects in iocage itself.
 The latter will raise regular a Python `Exception` that causes a stack trace.
 Whenever users face a non-IocageException, [reporting an Issue on GitHub](https://github.com/iocage/libiocage/issues/new) is the right action to do.

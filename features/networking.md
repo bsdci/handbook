@@ -1,3 +1,6 @@
+---
+title: Networking
+---
 Iocage is not meant to be a network manager.
 It provides configuration interfaces for common network scenarios, but the general assumption is that networking is already configured on the host.
 

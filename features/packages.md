@@ -1,3 +1,6 @@
+---
+title: Packages
+---
 Packages can be installed to jails even without access to the Internet.
 When using the Pkg feature of libiocage, packages are mirrored locally and mounted into the jail for package installation.
 

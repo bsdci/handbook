@@ -1,3 +1,6 @@
+---
+title: Resource Limits
+---
 To limit jails or jail process resources the host needs to have the `kern.racct` tunable enabled:
 
 ```sh

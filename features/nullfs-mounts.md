@@ -1,3 +1,6 @@
+---
+title: NullFS Mounts
+---
 Every jail has a fstab file that stores mountpoints that are being mounted on Jail start.
 Those files can be edited with the fstab file abstraction class that allows listing, creating and removing entries.
 

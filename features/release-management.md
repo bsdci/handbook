@@ -1,3 +1,6 @@
+---
+title: Release Management
+---
 Distribution releases in iocage provide the userland environment for Jails.
 While the Kernel is shared with host environment the userland is independently downloaded (and updated) from the distribution mirrors.
 This process is abstracted by libiocage by providing methods that trigger management tasks connected to such releases.

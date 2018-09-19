@@ -1,3 +1,6 @@
+---
+title: Releases and Jails
+---
 Jail and Release both inherit from the Resource class.
 Analog to the Resource-classes two further classes Jails and Releases (plural) inherit from the same class, the ListableResource.
 

@@ -1,3 +1,6 @@
+---
+title: "Hook Environment Variables"
+---
 During startup and teardown several hook commands are executed on the host and within the jail.
 Those commands are supplied environment variables that represent all Jail Config properties.
 

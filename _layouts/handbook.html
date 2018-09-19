@@ -7,9 +7,22 @@ layout: iocage
       <h1>Chapter Index</h1>
       <ul>
         {% for chapter in site.chapters %}
-        <li>
-            <a href="{{ chapter.url | relative_url }}" class="{% if chapter.url == page.url %}active{% endif %}">{{chapter.title}}</a>
+        {% if chapter.chapters %}
+        <li>{{chapter.title}}</li>
+        <li class="sub-chapters">
+          <ul>
+            {% for chapter in chapter.chapters %}
+              <li>
+                <a href="{{ chapter.url | relative_url }}" class="{% if page.url contains chapter.url %}active{% endif %}">{{chapter.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </li>
+        {% else %}
+        <li>
+          <a href="{{ chapter.url | relative_url }}" class="{% if chapter.url == page.url %}active{% endif %}">{{chapter.title}}</a>
+        </li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>

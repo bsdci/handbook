@@ -1,3 +1,6 @@
+---
+title: Shared ZFS Datasets
+---
 FreeBSD ZFS datasets can be *jailed*, which removes them from the hosts visibility but allows them to be seen by a jail they are assigned to.
 
 The first step of giving a jail access to a ZFS filesystem is to enable the `jailed` property.

@@ -7,22 +7,109 @@ chapters:
     url: /getting-started/
   -
     title: About iocage
-    url: /about/
+    chapters:
+      -
+        title: Intro
+        url: about/intro
+      -
+        title: Security Model
+        url: about/security-model
+      -
+        title: Bug Reporting
+        url: about/bug-reporting
+      -
+        title: Compatibility
+        url: about/compatibility
+      -
+        title: Contributor Covenant Code of Conduct
+        url: about/code-of-conduct
   -
     title: iocage Library Essentials
-    url: /library-essentials/
+    chapters:
+      -
+        title: Release
+        url: library-essentials/release
+      -
+        title: Jail
+        url: library-essentials/jail
+      -
+        title: Releases and Jails
+        url: library-essentials/releases-and-jails
+      -
+        title: Events and Generators
+        url: library-essentials/events-and-generators
+      -
+        title: Errors
+        url: library-essentials/errors
+      -
+        title: Logger
+        url: library-essentials/logger
   -
     title: Command Line
     url: /cli/
   -
     title: Features
-    url:  /features/
+    chapters:
+      -
+        title: Release Management
+        url: features/release-management
+      -
+        title: Networking
+        url: features/networking
+      -
+        title: Resource Filters
+        url: features/resource-filters
+      -
+        title: Jail Config
+        url: features/jail-config
+      -
+        title: Nested Jails
+        url: features/nested-jails
+      -
+        title: Shared ZFS datasets
+        url: features/shared-zfs-datasets
+      -
+        title: NullFS mounts
+        url: features/nullfs-mounts
+      -
+        title: Resource Limits
+        url: features/resource-limits
+      -
+        title: Packages
+        url: features/packages
+      -
+        title: Hook Environment Variables
+        url: features/environment
+      -
+        title: Provisioning
+        url: features/provisioning
   -
     title: Migration
     url:  /migration/
   -
     title: Advanced Library Usage
-    url: /advanced/
+    chapters:
+      -
+        title: Daemon
+        url: advanced/daemon
+      -
+        title: REST-API
+        url: advanced/rest-api
+      -
+        title: Logging
+        url: advanced/logging
+      -
+        title: Ephemeral Jails
+        url: advanced/ephemeral-jails
+      -
+        title: Green/Blue Development
+        url: advanced/green-blue-development
+      -
+        title: Rolling Updates
+        url: advanced/rolling-updates
+      -
+        title: Phoenix Deployment
+        url: advanced/phoenix-deployment
 
 iocage_cli_tool: "ioc"
 current_fbsd_release: "11.2-RELEASE"

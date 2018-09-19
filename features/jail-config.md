@@ -1,3 +1,6 @@
+---
+title: Jail Config
+---
 Every Jail in iocage has a `config` property that points to its JailConfg instance.
 This object behaves like a regular dictionary structure and returns a jails configuration properties by defined by the user, host globals or iocage defaults.
 

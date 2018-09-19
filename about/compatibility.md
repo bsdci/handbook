@@ -1,3 +1,6 @@
+---
+title: Compatibility
+---
 Over the years iocage evolved from a shell script to an implementation using python.
 libiocage unites all prior variants of iocage and iocell (the fork from iocage_legacy), so that it can deal with all configuration storage variants.
 

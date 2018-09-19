@@ -1,3 +1,6 @@
+---
+title: Logger
+---
 The iocage library Python is not supposed to print to stdout directly.
 Objects that are supposed to log do this by calling the Logger instance that was initialized on object creation.
 Each object that has a logger will automatically pass it to further objects they create which makes it sufficient to pass the Logger to the first iocage object that is created.
