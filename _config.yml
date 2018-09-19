@@ -95,30 +95,30 @@ chapters:
   -
     title: Migration
     url:  /migration/
-  -
-    title: Advanced Library Usage
-    chapters:
-      -
-        title: Daemon
-        url: advanced/daemon
-      -
-        title: REST-API
-        url: advanced/rest-api
-      -
-        title: Logging
-        url: advanced/logging
-      -
-        title: Ephemeral Jails
-        url: advanced/ephemeral-jails
-      -
-        title: Green/Blue Development
-        url: advanced/green-blue-development
-      -
-        title: Rolling Updates
-        url: advanced/rolling-updates
-      -
-        title: Phoenix Deployment
-        url: advanced/phoenix-deployment
+  # -
+  #   title: Advanced Library Usage
+  #   chapters:
+  #     -
+  #       title: Daemon
+  #       url: advanced/daemon
+  #     -
+  #       title: REST-API
+  #       url: advanced/rest-api
+  #     -
+  #       title: Logging
+  #       url: advanced/logging
+  #     -
+  #       title: Ephemeral Jails
+  #       url: advanced/ephemeral-jails
+  #     -
+  #       title: Green/Blue Development
+  #       url: advanced/green-blue-development
+  #     -
+  #       title: Rolling Updates
+  #       url: advanced/rolling-updates
+  #     -
+  #       title: Phoenix Deployment
+  #       url: advanced/phoenix-deployment
 
 iocage_cli_tool: "ioc"
 current_fbsd_release: "11.2-RELEASE"
