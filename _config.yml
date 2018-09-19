@@ -4,7 +4,19 @@ email: authors@iocage.io
 chapters:
   -
     title: Getting Started
-    url: /getting-started/
+    chapters:
+      -
+        title: Dependencies
+        url: getting-started/dependencies
+      -
+        title: Installation
+        url: getting-started/installation
+      -
+        title: Global Configuration
+        url: getting-started/global-config
+      -
+        title: The First Jail
+        url: getting-started/first-jail
   -
     title: About iocage
     chapters:
