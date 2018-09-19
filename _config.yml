@@ -57,9 +57,6 @@ chapters:
         title: Logger
         url: library-essentials/logger
   -
-    title: Command Line
-    url: /cli/
-  -
     title: Features
     chapters:
       -
