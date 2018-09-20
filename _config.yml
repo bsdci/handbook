@@ -1,124 +1,126 @@
 title: iocage Handbook
 email: authors@iocage.io
 
+permalink: pretty
+
 chapters:
   -
     title: Getting Started
     chapters:
       -
         title: Dependencies
-        url: getting-started/dependencies
+        url: /getting-started/dependencies/
       -
         title: Installation
-        url: getting-started/installation
+        url: /getting-started/installation/
       -
         title: Global Configuration
-        url: getting-started/global-config
+        url: /getting-started/global-config/
       -
         title: The First Jail
-        url: getting-started/first-jail
+        url: /getting-started/first-jail/
   -
     title: About iocage
     chapters:
       -
         title: Intro
-        url: about/intro
+        url: /about/intro/
       -
         title: Security Model
-        url: about/security-model
+        url: /about/security-model/
       -
         title: Bug Reporting
-        url: about/bug-reporting
+        url: /about/bug-reporting/
       -
         title: Compatibility
-        url: about/compatibility
+        url: /about/compatibility/
       -
         title: Contributor Covenant Code of Conduct
-        url: about/code-of-conduct
+        url: /about/code-of-conduct/
       -
         title: Migration
-        url:  about/migration
+        url: / about/migration/
   -
     title: iocage Library Essentials
     chapters:
       -
         title: Release
-        url: library-essentials/release
+        url: /library-essentials/release/
       -
         title: Jail
-        url: library-essentials/jail
+        url: /library-essentials/jail/
       -
         title: Releases and Jails
-        url: library-essentials/releases-and-jails
+        url: /library-essentials/releases-and-jails/
       -
         title: Events and Generators
-        url: library-essentials/events-and-generators
+        url: /library-essentials/events-and-generators/
       -
         title: Errors
-        url: library-essentials/errors
+        url: /library-essentials/errors/
       -
         title: Logger
-        url: library-essentials/logger
+        url: /library-essentials/logger/
   -
     title: Features
     chapters:
       -
         title: Release Management
-        url: features/release-management
+        url: /features/release-management/
       -
         title: Networking
-        url: features/networking
+        url: /features/networking/
       -
         title: Resource Filters
-        url: features/resource-filters
+        url: /features/resource-filters/
       -
         title: Jail Config
-        url: features/jail-config
+        url: /features/jail-config/
       -
         title: Nested Jails
-        url: features/nested-jails
+        url: /features/nested-jails/
       -
         title: Shared ZFS datasets
-        url: features/shared-zfs-datasets
+        url: /features/shared-zfs-datasets/
       -
         title: NullFS mounts
-        url: features/nullfs-mounts
+        url: /features/nullfs-mounts/
       -
         title: Resource Limits
-        url: features/resource-limits
+        url: /features/resource-limits/
       -
         title: Packages
-        url: features/packages
+        url: /features/packages/
       -
         title: Hook Environment Variables
-        url: features/environment
+        url: /features/environment/
       -
         title: Provisioning
-        url: features/provisioning
+        url: /features/provisioning/
   # -
   #   title: Advanced Library Usage
   #   chapters:
   #     -
   #       title: Daemon
-  #       url: advanced/daemon
+  #       url: /advanced/daemon/
   #     -
   #       title: REST-API
-  #       url: advanced/rest-api
+  #       url: /advanced/rest-api/
   #     -
   #       title: Logging
-  #       url: advanced/logging
+  #       url: /advanced/logging/
   #     -
   #       title: Ephemeral Jails
-  #       url: advanced/ephemeral-jails
+  #       url: /advanced/ephemeral-jails/
   #     -
   #       title: Green/Blue Development
-  #       url: advanced/green-blue-development
+  #       url: /advanced/green-blue-development/
   #     -
   #       title: Rolling Updates
-  #       url: advanced/rolling-updates
+  #       url: /advanced/rolling-updates/
   #     -
   #       title: Phoenix Deployment
-  #       url: advanced/phoenix-deployment
+  #       url: /advanced/phoenix-deployment/
 
 iocage_cli_tool: "ioc"
 current_fbsd_release: "11.2-RELEASE"

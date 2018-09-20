@@ -13,7 +13,7 @@ layout: iocage
           <ul>
             {% for chapter in chapter.chapters %}
               <li>
-                <a href="{{ chapter.url | relative_url }}" class="{% if page.url contains chapter.url %}active{% endif %}">{{chapter.title}}</a>
+                <a href="{{ chapter.url | relative_url }}" class="{% if page.url == chapter.url %}active{% endif %}">{{chapter.title}}</a>
               </li>
             {% endfor %}
           </ul>
@@ -21,6 +21,7 @@ layout: iocage
         {% else %}
         <li>
           <a href="{{ chapter.url | relative_url }}" class="{% if chapter.url == page.url %}active{% endif %}">{{chapter.title}}</a>
+          }
         </li>
         {% endif %}
         {% endfor %}
