@@ -87,3 +87,12 @@ A later migration will upgrade the whole jail to the most recent format, but bes
 | `provisioning.source`   | `None`                          | TODO          |
 | `provisioning.rev`      | `"master"`                      | TODO          |
 
+### User Properties
+
+The namespace `user.*` is available to store arbitrary config values. Those properties do not have an impact on the jail, but can be used to attach additional information to a jail.
+
+```shell-session
+$ ioc set user.comment="Nice Jail" myjail
+```
+
+Of course it is possible to select those values in [Resource Filters](../resource-filters/).
