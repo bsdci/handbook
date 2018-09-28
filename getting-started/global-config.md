@@ -17,3 +17,16 @@ and verify now that it really works with `{{site.iocage_cli_tool}} list`, which 
 +=====+===========+=========+=========+==========+
 +-----|-----------|---------|---------|----------+
 ```
+
+If you're noticing a bit of a delay in `{{site.iocage_cli_tool}} list`, this might be due to a well-known [performance issue](https://github.com/iocage/libiocage/issues/514).
+It occurs especially on large machines, and we recommend that you mount [`fdescfs(5)`](https://www.freebsd.org/cgi/man.cgi?fdescfs):
+
+```sh
+mount -t fdescfs null /dev/fd
+```
+
+and persist it to `/etc/fstab`:
+
+```
+fdescfs /dev/fd fdescfs rw	0 0
+```
