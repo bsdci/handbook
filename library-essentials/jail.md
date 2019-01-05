@@ -46,6 +46,8 @@ Instead it is created in the next step from a fetched Release.
 
 ```python
 release = iocage.Release("{{site.current_fbsd_release}}")
-jail = iocage.Jail(data(id="myjail"), new=True)
+jail = iocage.Jail(data(name="myjail"), new=True)
 jail.create(release)
 ```
+
+Even when enabling the `new` argument, a jail specified via `id` is required to exist. A Jail initialized with a name attempts to claim the id on creation on a specific ioc dataset using [multiple source datsets](https://github.com/bsdci/libioc/pull/287).
