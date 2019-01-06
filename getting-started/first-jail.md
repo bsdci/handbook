@@ -2,10 +2,10 @@
 title: The First Jail
 ---
 To create our first Jail, we first have to download a [Release](../library-essentials/#release).
-We can fetch the host system's default release by pressing enter on the `{{site.iocage_cli_tool}} fetch` prompt:
+We can fetch the host system's default release by pressing enter on the `{{site.ioc_cli_tool}} fetch` prompt:
 
 ```shell-session
-# {{site.iocage_cli_tool}} fetch
+# {{site.ioc_cli_tool}} fetch
 [0] 10.1-RELEASE (EOL)
 [1] 10.2-RELEASE (EOL)
 [2] 10.3-RELEASE (EOL)
@@ -20,7 +20,7 @@ Press [Enter] to fetch the default selection ({{site.current_fbsd_release}}) [6]
 We can verify that the release was downloaded successfully with
 
 ```shell-session
-# {{site.iocage_cli_tool}} list --release
+# {{site.ioc_cli_tool}} list --release
 +--------------+
 |  FULL_NAME   |
 +==============+
@@ -31,9 +31,9 @@ We can verify that the release was downloaded successfully with
 Now, let's create our Jail and verify that everything works as expected:
 
 ```shell-session
-# {{site.iocage_cli_tool}} create hello-world
+# {{site.ioc_cli_tool}} create hello-world
 hello-world successfully created from {{site.current_fbsd_release}}!
-# {{site.iocage_cli_tool}} list
+# {{site.ioc_cli_tool}} list
 +-----|-------------|---------|--------------|----------+
 | JID |  FULL_NAME  | RUNNING |   RELEASE    | IP4_ADDR |
 +=====+=============+=========+==============+==========+
@@ -44,13 +44,13 @@ hello-world successfully created from {{site.current_fbsd_release}}!
 And we're ready to start:
 
 ```shell-session
-# {{site.iocage_cli_tool}} start hello-world
+# {{site.ioc_cli_tool}} start hello-world
 [+] JailResolverConfig: OK [0.003s]
 [+] JailLaunch@hello-world: OK [0.496s]
 hello-world running as JID 3
 ```
 
-Again, with `{{site.iocage_cli_tool}} list` we can see what's up:
+Again, with `{{site.ioc_cli_tool}} list` we can see what's up:
 
 ```shell-session
 +-----|-------------|---------|--------------|----------+
@@ -69,10 +69,10 @@ root 3800  0.0  0.1 6412 2376  -  IsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  IsJ  20:53   0:00.01 /usr/sbin/cron -s
 ```
 
-Now, if you compare this to the output of `ps` under `{{site.iocage_cli_tool}} exec`, it should look similar:
+Now, if you compare this to the output of `ps` under `{{site.ioc_cli_tool}} exec`, it should look similar:
 
 ```shell-session
-# {{site.iocage_cli_tool}} exec hello-world -- ps -aux
+# {{site.ioc_cli_tool}} exec hello-world -- ps -aux
 USER  PID %CPU %MEM  VSZ  RSS TT  STAT STARTED    TIME COMMAND
 root 3800  0.0  0.1 6412 2376  -  IsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  IsJ  20:53   0:00.01 /usr/sbin/cron -s
@@ -83,7 +83,7 @@ except now `ps(1)` also lists itself.
 The hello-world Jail believes to be alone in the world, in fact, it believes to be Jail 0:
 
 ```shell-session
-# {{site.iocage_cli_tool}} exec hello-world -- ps -aux -J 0
+# {{site.ioc_cli_tool}} exec hello-world -- ps -aux -J 0
 USER  PID %CPU %MEM  VSZ  RSS TT  STAT STARTED    TIME COMMAND
 root 3800  0.0  0.1 6412 2376  -  SsJ  20:53   0:00.00 /usr/sbin/syslogd -ss
 root 3854  0.0  0.1 6464 2384  -  SsJ  20:53   0:00.01 /usr/sbin/cron -s

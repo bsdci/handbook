@@ -27,11 +27,11 @@ The preferred format for resource limit properties is:
 A jails memory consumption can be limited to not exceed 128M by setting the `vmemoryuse` configuration property:
 
 ```sh
-{{site.iocage_cli_tool}} create -b -n limited-jail vmemoryuse=deny=128M/jail
+{{site.ioc_cli_tool}} create -b -n limited-jail vmemoryuse=deny=128M/jail
 ```
 
-The same resource limit can be set at any later time by using the `{{site.iocage_cli_tool}} set` command:
+The same resource limit can be set at any later time by using the `{{site.ioc_cli_tool}} set` command:
 
 ```sh
-{{site.iocage_cli_tool}} set vmemoryuse=128M limited-jail
+{{site.ioc_cli_tool}} set vmemoryuse=128M limited-jail
 ```

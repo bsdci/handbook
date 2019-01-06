@@ -9,9 +9,9 @@ The `vnet` property of a jail defined which of the modes is enabled:
 
 ```sh
 # global
-{{site.iocage_cli_tool}} set vnet=on defaults
+{{site.ioc_cli_tool}} set vnet=on defaults
 # per-jail
-{{site.iocage_cli_tool}} set vnet=on <JAIL_NAME>
+{{site.ioc_cli_tool}} set vnet=on <JAIL_NAME>
 ```
 
 ### VNET
@@ -24,11 +24,11 @@ In Freebsd 11.1-RELEASE there is no default kernel support for VIMAGE/VNET, so t
 ```sh
 ifconfig bridge0 create
 ifconfig bridge0 10.23.42.1/24
-{{site.iocage_cli_tool}} create jail-a
-{{site.iocage_cli_tool}} create jail-b
-{{site.iocage_cli_tool}} set vnet=on interfaces="vnet0:bridge0" ip4_addr="vnet0|10.23.42.2/24" defaultrouter="10.23.42.1" jail-a
-{{site.iocage_cli_tool}} set vnet=on interfaces="vnet0:bridge0" ip4_addr="vnet0|10.23.42.3/24" defaultrouter="10.23.42.1" jail-b
-{{site.iocage_cli_tool}} start jail-a,jail-b
+{{site.ioc_cli_tool}} create jail-a
+{{site.ioc_cli_tool}} create jail-b
+{{site.ioc_cli_tool}} set vnet=on interfaces="vnet0:bridge0" ip4_addr="vnet0|10.23.42.2/24" defaultrouter="10.23.42.1" jail-a
+{{site.ioc_cli_tool}} set vnet=on interfaces="vnet0:bridge0" ip4_addr="vnet0|10.23.42.3/24" defaultrouter="10.23.42.1" jail-b
+{{site.ioc_cli_tool}} start jail-a,jail-b
 ```
 
 #### Secure VNET
@@ -54,7 +54,7 @@ Secure VNET can be enabled by using `::` as interface/bridge delimiter. For exam
 ```sh
 ifconfig bridge0 create
 ifconfig bridge0 10.23.42.1/24
-{{site.iocage_cli_tool}} create myjail vnet=on interfaces="vnet0::bridge0" ip4_addr="vnet0|10.23.42.2/24" defaultrouter="10.23.42.1"
+{{site.ioc_cli_tool}} create myjail vnet=on interfaces="vnet0::bridge0" ip4_addr="vnet0|10.23.42.2/24" defaultrouter="10.23.42.1"
 ```
 
 ### Non-VNET (default)
@@ -66,7 +66,7 @@ When using this network mode jails can list all existing host interfaces.
 #### Example
 
 ```sh
-{{site.iocage_cli_tool}} create non-vnet-jail
-{{site.iocage_cli_tool}} set vnet=off ip4_addr="em0|10.1.1.10/24" non-vnet-jail
-{{site.iocage_cli_tool}} start non-vnet-jail
+{{site.ioc_cli_tool}} create non-vnet-jail
+{{site.ioc_cli_tool}} set vnet=off ip4_addr="em0|10.1.1.10/24" non-vnet-jail
+{{site.ioc_cli_tool}} start non-vnet-jail
 ```

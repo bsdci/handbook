@@ -1,5 +1,5 @@
-title: iocage Handbook
-email: authors@iocage.io
+title: ioc Handbook
+email: ioc@bsd.ci
 
 permalink: pretty
 
@@ -20,7 +20,7 @@ chapters:
         title: The First Jail
         url: /getting-started/first-jail/
   -
-    title: About iocage
+    title: About ioc
     chapters:
       -
         title: Intro
@@ -41,7 +41,7 @@ chapters:
         title: Migration
         url: /about/migration/
   -
-    title: iocage Library Essentials
+    title: ioc Library Essentials
     chapters:
       -
         title: Release
@@ -122,7 +122,7 @@ chapters:
   #       title: Phoenix Deployment
   #       url: /advanced/phoenix-deployment/
 
-iocage_cli_tool: "ioc"
+ioc_cli_tool: "ioc"
 current_fbsd_release: "11.2-RELEASE"
 
 sass:

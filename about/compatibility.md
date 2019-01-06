@@ -32,8 +32,8 @@ The next time a Jail config is saved, the selected format will be used.
 This snippet demonstrates the migration from JSON to ZFS properties:
 
 ```python
->>> import iocage
->>> jail = iocage.Jail("some-jail")
+>>> import ioc
+>>> jail = ioc.Jail("some-jail")
 >>> jail.config_format
 'json'
 >>> jail.config_format = 'zfs'
@@ -41,7 +41,7 @@ This snippet demonstrates the migration from JSON to ZFS properties:
 ```
 
 The above operation does not delete the prior configuration (JSON), so that the Jail config will still be read from its JSON config - deleting the prior configuration resolves this issue.
-Of course the `{{site.iocage_cli_tool}} migrate` takes care by cleaning up after a successful migration to the most recent format.
+Of course the `{{site.ioc_cli_tool}} migrate` takes care by cleaning up after a successful migration to the most recent format.
 
 ### What about features?
 

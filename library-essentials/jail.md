@@ -21,10 +21,10 @@ Every Jail instance has a `Jail.state` propery that is an optional dictionary re
 Virtual properties like `Jail.running` and `Jail.stopped` provide (read only) boolean values about the jail state.
 
 ```python
->>> jail = iocage.Jail("myjail")
+>>> jail = ioc.Jail("myjail")
 >>> jail.running
 True
->>> isinstance(jail.state, iocage.JailState.JailState)
+>>> isinstance(jail.state, ioc.JailState.JailState)
 
 >>> jail.stop()
 ...
@@ -45,8 +45,8 @@ When creating a Jail the `new` argument disables the internal checks for existen
 Instead it is created in the next step from a fetched Release.
 
 ```python
-release = iocage.Release("{{site.current_fbsd_release}}")
-jail = iocage.Jail(data(name="myjail"), new=True)
+release = ioc.Release("{{site.current_fbsd_release}}")
+jail = ioc.Jail(data(name="myjail"), new=True)
 jail.create(release)
 ```
 

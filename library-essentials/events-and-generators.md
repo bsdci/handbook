@@ -1,7 +1,7 @@
 ---
 title: Events and Generators
 ---
-IocageEvent is a core structure used all across iocage.
+IocageEvent is a core structure used all across ioc.
 Whenever iocage faces async tasks, it communicates by yielding IocageEvent instances.
 
 The Python 3 language feature Generators (Iterators) allows to communicate state during the runtime of a method, so that each task produces continuous feedback on its progress.
@@ -10,11 +10,11 @@ Because Python Generators block until the yielded variable was consumed, some cl
 The folliing two snippets will have the same effect of starting a Jail:
 
 ```python
-iocage.Jail("myjail").start()
+ioc.Jail("myjail").start()
 ```
 
 ```python
-jail = iocage.Jail.JailGenerator("myjail")
+jail = ioc.Jail.JailGenerator("myjail")
 for event in jail.start():
     continue
 ```
@@ -47,10 +47,10 @@ From an event consumers perspective a typical stack of events provided by a gene
 - Event A: end
 
 The start command of a jail is a good example to demonstrate the consumption of events.
-This time the `iocage.Jail.JailGenerator` class is used directly instead of the syncronous wrapper `iocage.Jail.Jail`.
+This time the `ioc.Jail.JailGenerator` class is used directly instead of the syncronous wrapper `ioc.Jail.Jail`.
 
 ```python
-jail = iocage.Jail.JailGenerator("myjail")
+jail = ioc.Jail.JailGenerator("myjail")
 for event in jail.start():
     if event.pending is True:
        print(f"{event.type} is pending")
@@ -74,7 +74,7 @@ This method is called in case of failure of a sibling or child event (in LIFO or
 This abstract example shows how such a rollback step is implemented by rolling back a ZFS snapshot after a failed event:
 
 ```python
-import iocage
+import ioc
 import libzfs
 
 zfs = libzfs.ZFS()
@@ -88,7 +88,7 @@ def fail_doing_something(dataset_name):
     def _rollback_snapshot():
        snapshot.rollback()
 
-    myevent = iocage.events.IocageEvent()
+    myevent = ioc.events.IocageEvent()
     myevent.add_rollback_step(_rollback_snapshot);
     yield myevent.begin()
     # ...

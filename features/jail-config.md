@@ -5,7 +5,7 @@ Every Jail in iocage has a `config` property that points to its JailConfg instan
 This object behaves like a regular dictionary structure and returns a jails configuration properties by defined by the user, host globals or iocage defaults.
 
 ```python
-jail = iocage.Jail("myjail")
+jail = ioc.Jail("myjail")
 print(str(jail.config))
 ```
 

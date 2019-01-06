@@ -8,8 +8,8 @@ In the world of iocage every release is represented as a zfs dataset stored in `
 Releases are provided by the OS distribution maintainers and can be listed from the remote server.
 
 ```python
->>> import iocage
->>> distribution = iocage.Distribution()
+>>> import ioc
+>>> distribution = ioc.Distribution()
 >>> [x.name for x in distribution.releases]
 [
     '9.3-RELEASE'
@@ -26,7 +26,7 @@ Releases are provided by the OS distribution maintainers and can be listed from 
 Attributes on a Release instance indicate the local availability and status of a release.
 
 ```python
->>> r = iocage.Release("10.1-RELEASE")
+>>> r = ioc.Release("10.1-RELEASE")
 >>> r.available
 True
 >>> r.fetched
@@ -38,10 +38,10 @@ True
 Releases that are newer than the host kernel are not officially supported because they might be subject to breaking ABI changes.
 
 ```python
->>> host = iocage.Host()
+>>> host = ioc.Host()
 >>> host.userland_version
 11.1
->>> release = iocage.Release("11.2-RELEASE")
+>>> release = ioc.Release("11.2-RELEASE")
 >>> release.newer_than_host
 True
 ```
@@ -53,23 +53,23 @@ When fetching an already existing release `freebsd-update`, respectively `hbsd-u
 Note: The execution time of `Release.fetch()` depends on the connection speed and extraction performance.
 
 ```python
->>> release = iocage.Release("10.1-RELEASE")
+>>> release = ioc.Release("10.1-RELEASE")
 >>> release.fetched
 False
 >>> release.fetch()
 [
-    <iocage.events.FetchRelease object at 0x8086bd5f8>,
-    <iocage.events.ReleasePrepareStorage object at 0x8086bd630>,
-    <iocage.events.ReleasePrepareStorage object at 0x8086bd630>,
-    <iocage.events.ReleaseDownload object at 0x8086bd668>,
-    <iocage.events.ReleaseDownload object at 0x8086bd668>,
-    <iocage.events.ReleaseExtraction object at 0x8086bd6a0>,
-    <iocage.events.ReleaseExtraction object at 0x8086bd6a0>,
-    <iocage.events.FetchRelease object at 0x8086bd5f8>,
-    <iocage.events.ReleaseConfiguration object at 0x8086bd6d8>,
-    <iocage.events.ReleaseConfiguration object at 0x8086bd6d8>,
-    <iocage.events.ReleaseCopyBase object at 0x8086bd710>,
-    <iocage.events.ReleaseCopyBase object at 0x8086bd710>
+    <ioc.events.FetchRelease object at 0x8086bd5f8>,
+    <ioc.events.ReleasePrepareStorage object at 0x8086bd630>,
+    <ioc.events.ReleasePrepareStorage object at 0x8086bd630>,
+    <ioc.events.ReleaseDownload object at 0x8086bd668>,
+    <ioc.events.ReleaseDownload object at 0x8086bd668>,
+    <ioc.events.ReleaseExtraction object at 0x8086bd6a0>,
+    <ioc.events.ReleaseExtraction object at 0x8086bd6a0>,
+    <ioc.events.FetchRelease object at 0x8086bd5f8>,
+    <ioc.events.ReleaseConfiguration object at 0x8086bd6d8>,
+    <ioc.events.ReleaseConfiguration object at 0x8086bd6d8>,
+    <ioc.events.ReleaseCopyBase object at 0x8086bd710>,
+    <ioc.events.ReleaseCopyBase object at 0x8086bd710>
 ]
 >>> release.fetched
 True
@@ -84,21 +84,21 @@ Casting a generator to a list is not the most effective way to interface with it
 ```python
 >>> list(release.updater.fetch())
 [
-    <iocage.events.ReleaseUpdatePull object at 0x80870fc50>,
-    <iocage.events.ReleaseUpdatePull object at 0x80870fc50>,
-    <iocage.events.ReleaseUpdateDownload object at 0x8086b4c88>,
-    <iocage.events.ReleaseUpdateDownload object at 0x8086b4c88>
+    <ioc.events.ReleaseUpdatePull object at 0x80870fc50>,
+    <ioc.events.ReleaseUpdatePull object at 0x80870fc50>,
+    <ioc.events.ReleaseUpdateDownload object at 0x8086b4c88>,
+    <ioc.events.ReleaseUpdateDownload object at 0x8086b4c88>
 ]
 >>> list(release.updater.apply())
 [
-    <iocage.events.RunResourceUpdate object at 0x8086b40b8>,
-    <iocage.events.ExecuteResourceUpdate object at 0x80872b860>,
-    <iocage.events.JailResolverConfig object at 0x80872b7b8>,
-    <iocage.events.JailResolverConfig object at 0x80872b7b8>,
-    <iocage.events.JailLaunch object at 0x80872b518>,
-    <iocage.events.JailLaunch object at 0x80872b518>,
-    <iocage.events.ExecuteResourceUpdate object at 0x80872b860>,
-    <iocage.events.RunResourceUpdate object at 0x8086b40b8>,
+    <ioc.events.RunResourceUpdate object at 0x8086b40b8>,
+    <ioc.events.ExecuteResourceUpdate object at 0x80872b860>,
+    <ioc.events.JailResolverConfig object at 0x80872b7b8>,
+    <ioc.events.JailResolverConfig object at 0x80872b7b8>,
+    <ioc.events.JailLaunch object at 0x80872b518>,
+    <ioc.events.JailLaunch object at 0x80872b518>,
+    <ioc.events.ExecuteResourceUpdate object at 0x80872b860>,
+    <ioc.events.RunResourceUpdate object at 0x8086b40b8>,
     True
 ]
 ```

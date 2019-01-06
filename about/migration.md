@@ -2,7 +2,7 @@
 title: "Migration"
 ---
 
-Switching to the latest Jail Config format has performance benefits and enables features that have been introduced in libiocage.
+Switching to the latest Jail Config format has performance benefits and enables features that have been introduced in libioc.
 
 As usual, libiocage treats operations that modify existing jails with caution.
 As precaution a snapshot is automatically created before migrating a jail, so that jails are never left in a defect state.
@@ -12,7 +12,7 @@ Note: Jails that have been migrated might no longer been seen by iocage_legacy.
 ### Migration with the CLI tool
 
 ```sh
-{{site.iocage_cli_tool}} migrate my-jail
+{{site.ioc_cli_tool}} migrate my-jail
 ```
 
 ### Migration with the Python Module
@@ -25,8 +25,8 @@ While the [implementation of the ioc CLI tool] is a great reference for migratio
 2. Updating the Jail Config format
 
 ```python
-import iocage
-jail = iocage.Jail("0BAD1DEA")  # short UUID
+import ioc
+jail = ioc.Jail("0BAD1DEA")  # short UUID
 jail.rename(jail.tag)
 jail.config_type = "json"
 jail.save()

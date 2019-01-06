@@ -7,13 +7,13 @@ Analog to the Resource-classes two further classes Jails and Releases (plural) i
 Both plural classes are used to filter in lists of Jails or Releases, for example by using jail name globbing from the commandline to select all iocage Jails with a name beginning with `myproject-`:
 
 ```sh
-{{site.iocage_cli_tool}} list myproject-+
+{{site.ioc_cli_tool}} list myproject-+
 ```
 
 The same can be achieved with the Python module
 
 ```python
-jails = iocage.Jails("myproject-+")
+jails = ioc.Jails("myproject-+")
 for jail in jails:
     print(jail.name)
 ```
@@ -26,12 +26,12 @@ The Terms are constructed from an input string that may either be a Jail name (w
 #### Example: Filtering for running jails
 
 ```sh
-{{site.iocage_cli_tool}} list running=true
+{{site.ioc_cli_tool}} list running=true
 ```
 
 ```python
 filters = ("running=yes",)
-jails = iocage.Jails(filters=filters)
+jails = ioc.Jails(filters=filters)
 running_jails = list(jails)
 ```
 
@@ -60,13 +60,13 @@ When filters contain Terms for the same JailConfig, JailState or the Resource na
 The following filter will match all jails with a name beginning with `foo` that also contain `bar` in their name.
 
 ```sh
-{{site.iocage_cli_tool}} list foo+ +bar+
+{{site.ioc_cli_tool}} list foo+ +bar+
 ```
 
 Unlike the filter above it is possible to select jails that either begin with `foo` or contain `bar` in their name by separating the terms with a comma:
 
 ```sh
-{{site.iocage_cli_tool}} list "foo+,*bar*"
+{{site.ioc_cli_tool}} list "foo+,*bar*"
 ```
 
 Note: Depending on the shell it is required to quote or escape filter terms containing the `*` or `+` glob characters.

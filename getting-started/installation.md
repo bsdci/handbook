@@ -2,10 +2,10 @@
 title: Installation
 ---
 
-Please clone the repository from: https://github.com/iocage/libiocage.git
+Please clone the repository from: https://github.com/iocage/libioc.git
 
 ```shell-session
-~src # git clone https://github.com/iocage/libiocage.git
+~src # git clone https://github.com/iocage/libioc.git
 ~src # cd libiocage
 ```
 
@@ -26,8 +26,8 @@ In addition to several [code and style checkers](link to code & style checkers) 
 Let's test our setup so far:
 
 ```shell-session
-~libiocage # {{site.iocage_cli_tool}} list
-iocage is not activated yet - please run `{{site.iocage_cli_tool}} activate <POOL>` first and select a pool
+~libiocage # {{site.ioc_cli_tool}} list
+iocage is not activated yet - please run `{{site.ioc_cli_tool}} activate <POOL>` first and select a pool
 ```
 
 As the error suggests, we'll have to configure iocage first before usage.

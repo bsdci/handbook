@@ -13,7 +13,7 @@ zfs set jailed=on zroot/my-jail-dataset
 After this preparation iocage may automatically assign it to the jail on launch.
 
 ```sh
-{{site.iocage_cli_tool}} set jail_zfs_dataset=zroot/my-jail-dataset my-jail
+{{site.ioc_cli_tool}} set jail_zfs_dataset=zroot/my-jail-dataset my-jail
 ```
 
 Note: Like other Jail Config list properties, multiple datasets can be specified comma separated.
@@ -21,8 +21,8 @@ Note: Like other Jail Config list properties, multiple datasets can be specified
 Doing the same in Python requires to set a list structure containing the target jails datasets
 
 ```python
-import iocage
-jail = iocage.Jail("my-jail")
+import ioc
+jail = ioc.Jail("my-jail")
 jail.config["jail_zfs_dataset"] = ["zroot/my-jail-dataset"]
 jail.save()
 ```
