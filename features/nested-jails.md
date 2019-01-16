@@ -24,6 +24,20 @@ host # {{site.ioc_cli_tool}} set \
     allow_mount_zfs=yes \
     allow_raw_sockets=yes \
     enforce_statfs=yes \
+    nested-host
+```
+
+#### Mount fdescfs on the nested jail host
+```shell-session
+host # {{site.ioc_cli_tool}} set \
+    allow_mount_fdescfs=yes \
+    exec_poststart="mount -t fdescfs null /dev/fd" \
+    nested-host
+```
+
+#### Optional for VNET networking for the nested jail host
+```shell-session
+host # {{site.ioc_cli_tool}} set \
     vnet=yes \
     interfaces="vnet0:bridge0" \
     ip4_addr="vnet0|10.42.0.99/24" \
