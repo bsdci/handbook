@@ -2,33 +2,35 @@
 title: Installation
 ---
 
-Please clone the repository from: https://github.com/bsdci/libioc.git
+It is possible to install the CLI tool `ioc` and the library `libioc` independently. This instructions will install the CLI and its matching library version.
+
+Please clone the repository from: https://github.com/bsdci/ioc.git
 
 ```shell-session
-~src # git clone https://github.com/bsdci/libioc.git
-~src # cd libioc
+~src # git clone https://github.com/bsdci/ioc.git
+~src # cd ioc
 ```
 
-We can now use the project's `Makefile` to install all necessary *system* dependencies:
+A global installation can be performed by using the Makefile. This step will automatically checkout the right commit of the library submodule.
 
 ```shell-session
-~libioc # make deps
+~libioc # make install
+```
+### Development
+
+It is not required to install libioc or ioc globally for development purposes. It is enough to check out the git submodule and install the dependencies to use (lib)ioc from the local directory.
+
+```sh
+git clone --recurse-submodules https://github.com/bsdci/ioc.git
+cd ioc/
+make -C .libioc install-deps-dev
+make deps
+
+python3.6 . --version
 ```
 
-To install iocage, we will use the `install-dev` target, which installs additional dependencies for development, and allows us to use `/usr/local/src/libioc` for playing with project in the Python REPL:
+To run the style checkers and test suite, the Python dependencies from requirements-dev.txt can be installed additionally:
 
-```shell-session
-~libioc # make install-dev
+```sh
+python3.6 -m pip install -Ur requirements-dev.txt
 ```
-
-In addition to several [code and style checkers](link to code & style checkers) this also installs [sphinx tools for documentation generation](link to API docs) and GNU Make, which it uses underneath.
-
-Let's test our setup so far:
-
-```shell-session
-~libioc # {{site.ioc_cli_tool}} list
-iocage is not activated yet - please run `{{site.ioc_cli_tool}} activate <POOL>` first and select a pool
-```
-
-As the error suggests, we'll have to configure iocage first before usage.
-One way to do that is to run the suggested command.
