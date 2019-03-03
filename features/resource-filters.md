@@ -64,7 +64,7 @@ The above example prints all jails that are tagged with `customer-a` or do not h
 #### Filters in the Python Module
 
 The iocage Python module accepts Filters as selector of Resources like Jails and Releases.
-They can be passed to the [`JailsGenerator`](https://ioc.github.io/libiocage/ioc.Jails.html#ioc.Jails.JailsGenerator) or [`ReleasesGenerator`](https://ioc.github.io/libiocage/ioc.Releases.html#ioc.Releases.ReleasesGenerator) (plural) classes as Python set structure.
+They can be passed to the [`JailsGenerator`](https://ioc.github.io/libioc/ioc.Jails.html#ioc.Jails.JailsGenerator) or [`ReleasesGenerator`](https://ioc.github.io/libioc/ioc.Releases.html#ioc.Releases.ReleasesGenerator) (plural) classes as Python set structure.
 
 ```python
 >>> import ioc

@@ -4,7 +4,7 @@ title: NullFS Mounts
 Every jail has a fstab file that stores mountpoints that are being mounted on Jail start.
 Those files can be edited with the fstab file abstraction class that allows listing, creating and removing entries.
 
-An instance of the [`ioc.Config.Jail.File.Fstab.Fstab`](https://ioc.github.io/libiocage/ioc.Config.Jail.File.Fstab.html) class is available on a Jail object as `fstab` property that is lazy-loaded on access.
+An instance of the [`ioc.Config.Jail.File.Fstab.Fstab`](https://ioc.github.io/libioc/ioc.Config.Jail.File.Fstab.html) class is available on a Jail object as `fstab` property that is lazy-loaded on access.
 
 ```python
 >>> import ioc
@@ -24,11 +24,11 @@ True
 }]
 ```
 
-The single entry of the non-basejail created above is automatically created by libiocage in order to mount launch scripts for Jail startup and teardown.
+The single entry of the non-basejail created above is automatically created by libioc in order to mount launch scripts for Jail startup and teardown.
 
 ### Adding Mountpoints
 
-The Fstab class is a list of [`ioc.Config.Jail.File.Fstab.FstabLine`](https://ioc.github.io/libiocage/ioc.Config.Jail.File.Fstab.html#ioc.Config.Jail.File.Fstab.FstabLine) entries.
+The Fstab class is a list of [`ioc.Config.Jail.File.Fstab.FstabLine`](https://ioc.github.io/libioc/ioc.Config.Jail.File.Fstab.html#ioc.Config.Jail.File.Fstab.FstabLine) entries.
 New entries can be created by creating and adding such an object.
 
 ```python

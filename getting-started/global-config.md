@@ -4,7 +4,7 @@ title: Global Configuration
 We can set our first dataset for iocage's use with `sysrc(8)` or by editing `rc.conf(5)`:
 
 ```shell-session
-~libiocage # sysrc {{site.ioc_cli_tool}}_dataset_default="zroot/iocage"
+~libioc # sysrc {{site.ioc_cli_tool}}_dataset_default="zroot/iocage"
 {{site.ioc_cli_tool}}_dataset_default: zroot/iocage -> zroot/iocage
 ```
 
@@ -18,7 +18,7 @@ and verify now that it really works with `{{site.ioc_cli_tool}} list`, which sho
 +-----|-----------|---------|---------|----------+
 ```
 
-If you're noticing a bit of a delay in `{{site.ioc_cli_tool}} list`, this might be due to a well-known [performance issue](https://github.com/iocage/libiocage/issues/514).
+If you're noticing a bit of a delay in `{{site.ioc_cli_tool}} list`, this might be due to a well-known [performance issue](https://github.com/bsdci/libioc/issues/514).
 It occurs especially on large machines, and we recommend that you mount [`fdescfs(5)`](https://www.freebsd.org/cgi/man.cgi?fdescfs):
 
 ```sh

@@ -16,7 +16,7 @@ The `vnet` property of a jail defined which of the modes is enabled:
 
 ### VNET
 
-Like previous iocage versions, libiocage comes with support for VNET/VIMAGE.
+Like previous iocage versions, libioc comes with support for VNET/VIMAGE.
 In Freebsd 11.1-RELEASE there is no default kernel support for VIMAGE/VNET, so that this network mode requires building a custom kernel with `options VIMAGE`.
 
 #### Example

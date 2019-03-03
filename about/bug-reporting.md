@@ -8,7 +8,7 @@ At the time of writing this document, no automated unit- or integration test exi
 
 ### How to detect bugs?
 
-As general rule of thumb libiocage will stack-trace on unknown problems. As soon as such occasions are spotted, it is the right moment to speak up in the GitHub Issues of the according project.
+As general rule of thumb libioc will stack-trace on unknown problems. As soon as such occasions are spotted, it is the right moment to speak up in the GitHub Issues of the according project.
 
 In case of undefined behavior, that does not result in such stack-traces, the discussion on GitHub as much appreciated as well.
 
@@ -31,4 +31,4 @@ A bug report should contain at least the following information:
 
 The iocage project highly values its users security which is why we encourage our contributors to file vulnerability issues on a non-public channel until a reasonable precautions have been taken. Pull-Request that introduce mitigations against flaws, that can have a security impact, will contain details on the vulnerability and credit the person who has reported the issue in first place.
 
-User can stay informed by monitoring [GitHub Issues and Pull-Requests tagged with security label](https://github.com/iocage/libiocage/issues?q=label%3Asecurity).
+User can stay informed by monitoring [GitHub Issues and Pull-Requests tagged with security label](https://github.com/bsdci/libioc/issues?q=label%3Asecurity).

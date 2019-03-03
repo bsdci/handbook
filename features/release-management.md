@@ -3,11 +3,11 @@ title: Release Management
 ---
 Distribution releases in iocage provide the userland environment for Jails.
 While the Kernel is shared with host environment the userland is independently downloaded (and updated) from the distribution mirrors.
-This process is abstracted by libiocage by providing methods that trigger management tasks connected to such releases.
+This process is abstracted by libioc by providing methods that trigger management tasks connected to such releases.
 
 ### Finding Releases
 
-The libiocage [Distribution](https://ioc.github.io/libiocage/ioc.Distribution.html) object has a dynamic property called `releases`.
+The libioc [Distribution](https://ioc.github.io/libioc/ioc.Distribution.html) object has a dynamic property called `releases`.
 When requesting this property, the list of remotely available releases is pulled from the host distributions mirror and compared to End-Of-Life announcements.
 
 ```python
@@ -70,7 +70,7 @@ release.fetch()
 ```
 
 Note: The fetch method will return a Generator when being called on ReleaseGenerator.
-The simplified class [`Release`](https://ioc.github.io/libiocage/ioc.Release.html) used in the snippet above does only return a list at once after it finished the entire download/update.
+The simplified class [`Release`](https://ioc.github.io/libioc/ioc.Release.html) used in the snippet above does only return a list at once after it finished the entire download/update.
 
 ### EOL and Host Incompatibility
 
@@ -105,9 +105,9 @@ Neither the connection to the distribution mirror, nor any data that could have 
 Releases downloaded from a distribution mirror already contain the latest version including patches.
 Therefore newly created releases are tagged as patchlevel `0` for both FreeBSD and HardenedBSD.
 The next time an existing release is fetched, the distributions update tool is used to pull patches offline and to apply them to Releases or non-basejails.
-After changes occur, libiocage reads the applied patch level, that is then reflected in the new snapshot.
+After changes occur, libioc reads the applied patch level, that is then reflected in the new snapshot.
 
 It is not possible to download older releases of outdated patchlevels because the distribution mirror already includes the most recent updates.
 Jails that get migrated from hosts with snapshots of releases must be updated to be migrated to the new host.
 
-While libiocage assumes to use the snapshot of the latest available patches, it is possible to target specific versions (for example `11.1-RELEASE-p4`).
+While libioc assumes to use the snapshot of the latest available patches, it is possible to target specific versions (for example `11.1-RELEASE-p4`).

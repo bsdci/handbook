@@ -13,7 +13,7 @@ The JailConfig is compatible with all prior iocage variants, so that it is possi
 When reading existing jails from disk, the currently used configuration storage format is automatically detected and continued to be used when saving changes.
 The most recent format seen on a host defines the format that iocage will use to create new jails with, which is neat when updating hosts that are maintained by an existing installation.
 
-Note: Sceptical users may use libiocage with existing jails without modification of the format.
+Note: Sceptical users may use libioc with existing jails without modification of the format.
 A later migration will upgrade the whole jail to the most recent format, but besides the absence of some newer features there is no reason to migrate a jail at all.
 
 ### Configuration Properties

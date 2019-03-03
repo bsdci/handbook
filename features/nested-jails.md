@@ -1,8 +1,8 @@
 ---
 title: Nested Jails
 ---
-It is possible to use libiocage within another jail instance, so that it is possible to run nested jails.
-The requirements to run libiocage within another iocage jail are
+It is possible to use libioc within another jail instance, so that it is possible to run nested jails.
+The requirements to run libioc within another iocage jail are
 
 - At least one ZFS dataset is shared with the jail that will become the iocage root dataset
 - An maximum number of allowed jails to start (`children_mac`)
@@ -45,12 +45,12 @@ host # {{site.ioc_cli_tool}} set \
     nested-host
 ```
 
-Within the jail libiocage can be configured to use the shared ZFS filesystem:
+Within the jail libioc can be configured to use the shared ZFS filesystem:
 
 ```shell-session
 nested-host # pkg install -y git-lite
-nested-host # git clone https://github.com/iocage/libiocage
-nested-host # cd libiocage/
+nested-host # git clone https://github.com/bsdci/libioc
+nested-host # cd libioc/
 nested-host # make install
 nested-host # sysrc {{site.ioc_cli_tool}}_dataset_ioc="root/jailed/iocage"
 nested-host # {{site.ioc_cli_tool}} fetch -r {{site.current_fbsd_release}}
