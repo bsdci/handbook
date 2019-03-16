@@ -1,7 +1,7 @@
 ---
 title: Bug Reporting
 ---
-Issues and Bugs of iocage are tracked on GitHub among the source repositories. 
+Issues and Bugs of ioc are tracked on GitHub among the source repositories.
 A direct relation between sources and bug resolution allows us to comprehensively inform about reaons behind changes, which is important to prevent future regressions.
 
 At the time of writing this document, no automated unit- or integration test exist that would allow the project to verify the absence of previously experienced issues. Our aim is to establish proper quality assurance measures that integrate with GitHub Pull-Requests in the recent future.
@@ -29,6 +29,6 @@ A bug report should contain at least the following information:
 
 ### Security and Incident Response
 
-The iocage project highly values its users security which is why we encourage our contributors to file vulnerability issues on a non-public channel until a reasonable precautions have been taken. Pull-Request that introduce mitigations against flaws, that can have a security impact, will contain details on the vulnerability and credit the person who has reported the issue in first place.
+The ioc project highly values its users security which is why we encourage our contributors to file vulnerability issues on a non-public channel until a reasonable precautions have been taken. Pull-Request that introduce mitigations against flaws, that can have a security impact, will contain details on the vulnerability and credit the person who has reported the issue in first place.
 
 User can stay informed by monitoring [GitHub Issues and Pull-Requests tagged with security label](https://github.com/bsdci/libioc/issues?q=label%3Asecurity).
