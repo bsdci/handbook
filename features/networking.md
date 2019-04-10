@@ -42,9 +42,12 @@ IPFW is then configured to whitelist the jails IP and Mac pair in both direction
 ```sh
 sysrc firewall_type=open
 sysrc firewall_enable=YES
+service ipfw start
 sysctl net.link.ether.ipfw=1
 sysctl net.link.bridge.ipfw=1
-service ipfw start
+# permanently enable sysctls
+echo "net.link.ether.ipfw=1" >> /etc/sysctl.conf
+echo "net.link.bridge.ipfw=1" >> /etc/sysctl.conf
 ```
 
 ##### Jail Configuration
