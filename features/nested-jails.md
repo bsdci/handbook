@@ -5,7 +5,7 @@ It is possible to use libioc within another jail instance, so that it is possibl
 The requirements to run libioc within another iocage jail are
 
 - At least one ZFS dataset is shared with the jail that will become the iocage root dataset
-- An maximum number of allowed jails to start (`children_mac`)
+- An maximum number of allowed jails to start (`children_max`)
 - The ability to mount NullFS and ZFS
 
 ```shell-session
